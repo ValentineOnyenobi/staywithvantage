@@ -35,13 +35,12 @@ export const whatsappHref = `https://wa.me/${contact.whatsappNumber}?text=${enco
 )}`;
 
 export const navLinks = [
-  { label: "Home", id: "home" },
-  { label: "Elite Handlers", id: "handlers" },
-  { label: "Platform", id: "platform" },
-  { label: "Elite Property Care", id: "property-care" },
-  { label: "About", id: "about" },
-  { label: "Contact", id: "enquiry" },
+  { label: "Home", to: "/" },
+  { label: "Services", to: "/services" },
+  { label: "About", to: "/about" },
+  { label: "Contact", to: "/contact" },
 ];
+
 
 export const serviceLines = [
   {
