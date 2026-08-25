@@ -126,13 +126,15 @@ export function Estimator() {
           />
 
           <div className="border-t border-border pt-7">
-            <label className="flex items-center justify-between gap-4">
-              <span className="text-sm">Add linen service</span>
+            <div className="flex items-center justify-between gap-4">
+              <span id="linen-toggle-label" className="text-sm">
+                Add linen service
+              </span>
               <button
                 type="button"
                 role="switch"
                 aria-checked={linenOn}
-                aria-label="Add linen service"
+                aria-labelledby="linen-toggle-label"
                 onClick={() => setLinenOn((v) => !v)}
                 className={cn(
                   "relative h-6 w-11 shrink-0 rounded-full transition-colors duration-300",
@@ -148,7 +150,8 @@ export function Estimator() {
                   )}
                 />
               </button>
-            </label>
+            </div>
+
 
             {linenOn && (
               <div className="mt-7 space-y-6">
