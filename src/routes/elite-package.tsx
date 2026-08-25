@@ -10,7 +10,7 @@ import svcTransfer from "@/assets/svc-transfer.jpg";
 import svcGrocery from "@/assets/svc-grocery.jpg";
 import svcTraining from "@/assets/svc-training.jpg";
 import svcRoom from "@/assets/svc-room.jpg";
-import svcExperiences from "@/assets/svc-experiences.jpg";
+import svcLaundry from "@/assets/svc-laundry.jpg";
 import svcOther from "@/assets/svc-other.jpg";
 import flowCapture from "@/assets/flow-02-capture.jpg";
 import flowVisibility from "@/assets/flow-05-visibility.jpg";
@@ -48,7 +48,7 @@ const guestServiceExamples = [
   { label: "Grocery", image: svcGrocery },
   { label: "Personal training", image: svcTraining },
   { label: "Room services", image: svcRoom },
-  { label: "Experiences", image: svcExperiences },
+  { label: "Laundry", image: svcLaundry },
   { label: "Other guest services", image: svcOther },
 ];
 
