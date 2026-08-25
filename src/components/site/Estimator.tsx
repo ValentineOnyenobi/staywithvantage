@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 
 type Size = "small" | "four" | "larger";
 type Freq = 1 | 2 | 3;
-type LinenFreq = 1 | 2;
+type LinenFreq = 1 | 2 | 3;
 
 const sizeOptions: { value: Size; label: string }[] = [
   { value: "small", label: "1–2 bedroom" },
@@ -85,7 +85,7 @@ export function Estimator() {
 
   const linenCost = useMemo(() => {
     if (!linenOn) return 0;
-    const multiplier = linenFreq === 1 ? 4 : 8;
+    const multiplier = linenFreq === 1 ? 4 : linenFreq === 2 ? 8 : 12;
     return linenItems.reduce((sum, i) => sum + i.price * (qty[i.key] || 0) * multiplier, 0);
   }, [linenOn, linenFreq, qty]);
 
@@ -108,6 +108,9 @@ export function Estimator() {
       <p className="mt-4 max-w-xl text-muted-foreground">
         Pricing is built from two simple parts — property care and linen — combined at a discount
         when you take both. This is an indicative self-qualification tool, not a binding quote.
+      </p>
+      <p className="mt-3 inline-flex items-center gap-2 rounded-full border border-primary/15 bg-primary/5 px-4 py-1.5 text-xs uppercase tracking-[0.14em] text-primary/80">
+        Elite Handlers · Monthly service subscription
       </p>
 
       <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-primary/15 bg-primary/10 lg:grid-cols-[1.15fr_1fr]">
@@ -158,8 +161,9 @@ export function Estimator() {
                 <OptionGroup
                   legend="Linen frequency"
                   options={[
-                    { value: 1 as LinenFreq, label: "Weekly" },
+                    { value: 1 as LinenFreq, label: "1× weekly" },
                     { value: 2 as LinenFreq, label: "2× weekly" },
+                    { value: 3 as LinenFreq, label: "3× weekly" },
                   ]}
                   value={linenFreq}
                   onChange={setLinenFreq}
@@ -196,7 +200,7 @@ export function Estimator() {
         {/* Estimate */}
         <div className="flex flex-col justify-between gap-8 bg-ink p-7 text-white sm:p-10">
           <div>
-            <p className="text-xs uppercase tracking-[0.2em] text-white/50">Monthly estimate</p>
+            <p className="text-xs uppercase tracking-[0.2em] text-white/50">Monthly subscription estimate</p>
             <p
               aria-live="polite"
               className={cn(
@@ -229,9 +233,10 @@ export function Estimator() {
             )}
 
             <p className="mt-8 text-xs leading-relaxed text-white/45">
-              Indicative estimate only — final pricing confirmed after a quick property assessment.
-              Larger properties, industrial cleaning, and the StayWithVantage Platform layer are
-              quoted separately.
+              Indicative estimate only — all figures are monthly service subscription estimates,
+              not one-off service prices. Final pricing is confirmed after a quick property
+              assessment. Larger properties, industrial cleaning, and the StayWithVantage Platform
+              layer are quoted separately.
             </p>
           </div>
 
