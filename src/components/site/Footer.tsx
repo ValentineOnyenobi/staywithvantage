@@ -31,7 +31,9 @@ export function Footer() {
         </div>
 
         <nav aria-label="Footer" className="flex flex-col items-start gap-3">
-          {navLinks.map((link) => (
+          {navLinks
+            .filter((link) => link.to !== "/elite-package")
+            .map((link) => (
             <Link key={link.to} to={link.to} className="text-sm transition-colors hover:text-white">
               {link.label}
             </Link>
