@@ -74,7 +74,7 @@ export function Footer() {
             {contact.phone}
           </a>
           <span className="cursor-not-allowed text-white/40">Client Login — coming soon</span>
-          <div className="mt-1.5 flex items-center gap-3">
+          <div className="mt-1 flex items-center gap-3">
             <a
               href={contact.instagram}
               target="_blank"
