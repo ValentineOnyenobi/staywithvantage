@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { navLinks } from "@/content/site";
+import logoAsset from "@/assets/sv-logo.png.asset.json";
 
 export function Nav() {
   const [open, setOpen] = useState(false);
