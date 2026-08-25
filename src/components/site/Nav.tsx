@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { navLinks } from "@/content/site";
+import logoAsset from "@/assets/sv-logo.png.asset.json";
 
 export function Nav() {
   const [open, setOpen] = useState(false);
@@ -27,15 +28,21 @@ export function Nav() {
       )}
     >
       <div className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-4 sm:px-8">
-        <Link
-          to="/"
-          onClick={close}
-          className={cn(
-            "min-w-0 truncate text-left font-[family-name:var(--font-display)] text-base tracking-tight sm:text-lg",
-            scrolled || open ? "text-foreground" : "text-white",
-          )}
-        >
-          StayWithVantage
+        <Link to="/" onClick={close} aria-label="StayWithVantage — home" className="min-w-0">
+          <span
+            className={cn(
+              "inline-flex items-center justify-center rounded-full bg-white p-1.5 shadow-sm transition-shadow sm:p-2",
+              scrolled || open ? "ring-1 ring-border" : "ring-1 ring-white/40",
+            )}
+          >
+            <img
+              src={logoAsset.url}
+              alt="StayWithVantage"
+              width={64}
+              height={64}
+              className="size-9 object-contain sm:size-11"
+            />
+          </span>
         </Link>
 
         <nav aria-label="Main" className="hidden items-center gap-7 lg:flex">
