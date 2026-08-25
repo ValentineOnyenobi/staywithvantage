@@ -1,24 +1,56 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Nav } from "@/components/site/Nav";
+import { Footer } from "@/components/site/Footer";
+import { WhatsAppFloat } from "@/components/site/WhatsAppFloat";
+import { Enquiry } from "@/components/site/EnquiryForm";
+import {
+  Audiences,
+  FinalCTA,
+  HandlersDetail,
+  Hero,
+  HowItWorks,
+  PlatformDetail,
+  PropertyCare,
+  Statement,
+  Trust,
+  WhatWeDo,
+} from "@/components/site/Sections";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const title = "StayWithVantage — Make your property easier to run";
+const description =
+  "In-house housekeeping, linen and industrial cleaning by Elite Handlers, plus guest experience, QR guidebooks and reporting from the StayWithVantage Platform.";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title },
+      { name: "description", content: description },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="bg-background">
+      <Nav />
+      <main>
+        <Hero />
+        <WhatWeDo />
+        <HowItWorks />
+        <HandlersDetail />
+        <PlatformDetail />
+        <PropertyCare />
+        <Statement />
+        <Trust />
+        <Audiences />
+        <FinalCTA />
+        <Enquiry />
+      </main>
+      <Footer />
+      <WhatsAppFloat />
     </div>
   );
 }
