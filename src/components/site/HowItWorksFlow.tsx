@@ -50,7 +50,7 @@ function Arrow({ className }: { className?: string }) {
 }
 
 export function HowItWorks() {
-  const { ref, shown } = useReveal<HTMLDivElement>();
+  const { ref, shown } = useReveal<HTMLOListElement>();
 
   return (
     <section
