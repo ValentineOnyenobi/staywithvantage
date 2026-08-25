@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Link } from "@tanstack/react-router";
 import { cn } from "@/lib/utils";
 import { scrollToId } from "@/lib/scroll";
 
@@ -22,6 +23,18 @@ export function Eyebrow({ children }: { children: ReactNode }) {
   return <p className="eyebrow">{children}</p>;
 }
 
+const buttonBase =
+  "inline-flex items-center justify-center rounded-full px-6 py-3 text-sm tracking-wide transition-colors duration-300";
+
+function variantClass(variant: "solid" | "outline" | "light") {
+  return cn(
+    variant === "solid" && "bg-primary text-primary-foreground hover:bg-ink",
+    variant === "outline" &&
+      "border border-primary/30 text-primary hover:border-primary hover:bg-primary hover:text-primary-foreground",
+    variant === "light" && "border border-white/50 text-white hover:bg-white hover:text-primary",
+  );
+}
+
 export function ScrollButton({
   to,
   children,
@@ -37,25 +50,50 @@ export function ScrollButton({
     <button
       type="button"
       onClick={() => scrollToId(to)}
-      className={cn(
-        "inline-flex items-center justify-center rounded-full px-6 py-3 text-sm tracking-wide transition-colors duration-300",
-        variant === "solid" && "bg-primary text-primary-foreground hover:bg-ink",
-        variant === "outline" &&
-          "border border-primary/30 text-primary hover:border-primary hover:bg-primary hover:text-primary-foreground",
-        variant === "light" && "border border-white/50 text-white hover:bg-white hover:text-primary",
-        className,
-      )}
+      className={cn(buttonBase, variantClass(variant), className)}
     >
       {children}
     </button>
   );
 }
 
-export function ExploreLink({ to, children }: { to: string; children: ReactNode }) {
+export function LinkButton({
+  to,
+  hash,
+  children,
+  variant = "solid",
+  className,
+}: {
+  to: string;
+  hash?: string;
+  children: ReactNode;
+  variant?: "solid" | "outline" | "light";
+  className?: string;
+}) {
   return (
-    <button
-      type="button"
-      onClick={() => scrollToId(to)}
+    <Link
+      to={to}
+      hash={hash}
+      className={cn(buttonBase, variantClass(variant), className)}
+    >
+      {children}
+    </Link>
+  );
+}
+
+export function ExploreLink({
+  to,
+  hash,
+  children,
+}: {
+  to: string;
+  hash?: string;
+  children: ReactNode;
+}) {
+  return (
+    <Link
+      to={to}
+      hash={hash}
       className="group inline-flex items-center gap-2 text-sm tracking-wide text-primary"
     >
       <span className="border-b border-primary/30 pb-1 transition-colors group-hover:border-primary">
@@ -64,14 +102,12 @@ export function ExploreLink({ to, children }: { to: string; children: ReactNode 
       <span aria-hidden className="transition-transform group-hover:translate-x-1">
         →
       </span>
-    </button>
+    </Link>
   );
 }
 
 export function TagRow({ tags }: { tags: string[] }) {
   return (
-    <p className="text-xs tracking-[0.16em] uppercase text-muted-foreground">
-      {tags.join(" · ")}
-    </p>
+    <p className="text-xs tracking-[0.16em] uppercase text-muted-foreground">{tags.join(" · ")}</p>
   );
 }

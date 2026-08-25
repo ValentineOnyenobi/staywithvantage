@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { scrollToId } from "@/lib/scroll";
 import { navLinks } from "@/content/site";
 
 export function Nav() {
@@ -15,10 +15,7 @@ export function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const go = (id: string) => {
-    setOpen(false);
-    scrollToId(id);
-  };
+  const close = () => setOpen(false);
 
   return (
     <header
@@ -30,34 +27,36 @@ export function Nav() {
       )}
     >
       <div className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-4 sm:px-8">
-        <button
-          type="button"
-          onClick={() => go("home")}
+        <Link
+          to="/"
+          onClick={close}
           className={cn(
             "min-w-0 truncate text-left font-[family-name:var(--font-display)] text-base tracking-tight sm:text-lg",
             scrolled || open ? "text-foreground" : "text-white",
           )}
         >
           StayWithVantage
-        </button>
+        </Link>
 
-        <nav className="hidden items-center gap-7 lg:flex">
+        <nav aria-label="Main" className="hidden items-center gap-7 lg:flex">
           {navLinks.map((link) => (
-            <button
-              key={link.id}
-              type="button"
-              onClick={() => go(link.id)}
+            <Link
+              key={link.to}
+              to={link.to}
+              onClick={close}
+              activeOptions={{ exact: link.to === "/" }}
               className={cn(
                 "text-sm transition-opacity hover:opacity-60",
                 scrolled ? "text-foreground" : "text-white/90",
               )}
+              activeProps={{ className: "underline underline-offset-4" }}
             >
               {link.label}
-            </button>
+            </Link>
           ))}
-          <button
-            type="button"
-            onClick={() => go("enquiry")}
+          <Link
+            to="/contact"
+            onClick={close}
             className={cn(
               "rounded-full px-5 py-2.5 text-sm tracking-wide transition-colors",
               scrolled
@@ -66,22 +65,20 @@ export function Nav() {
             )}
           >
             Get Started
-          </button>
+          </Link>
         </nav>
 
         <div className="flex shrink-0 items-center gap-3 lg:hidden">
-          <button
-            type="button"
-            onClick={() => go("enquiry")}
+          <Link
+            to="/contact"
+            onClick={close}
             className={cn(
               "rounded-full px-4 py-2 text-xs tracking-wide transition-colors",
-              scrolled || open
-                ? "bg-primary text-primary-foreground"
-                : "bg-white text-primary",
+              scrolled || open ? "bg-primary text-primary-foreground" : "bg-white text-primary",
             )}
           >
             Get Started
-          </button>
+          </Link>
           <button
             type="button"
             aria-label={open ? "Close menu" : "Open menu"}
@@ -95,16 +92,16 @@ export function Nav() {
       </div>
 
       {open && (
-        <nav className="border-t border-border bg-background px-5 pb-8 pt-4 lg:hidden">
+        <nav aria-label="Mobile" className="border-t border-border bg-background px-5 pb-8 pt-4 lg:hidden">
           {navLinks.map((link) => (
-            <button
-              key={link.id}
-              type="button"
-              onClick={() => go(link.id)}
+            <Link
+              key={link.to}
+              to={link.to}
+              onClick={close}
               className="block w-full border-b border-border/60 py-4 text-left font-[family-name:var(--font-display)] text-lg"
             >
               {link.label}
-            </button>
+            </Link>
           ))}
         </nav>
       )}
