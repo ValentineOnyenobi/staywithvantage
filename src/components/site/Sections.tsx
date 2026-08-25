@@ -168,10 +168,15 @@ export function PlatformDetail() {
         The systems behind a calm operation.
       </h2>
       <div className="mt-12 grid gap-px overflow-hidden border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-3">
-        {platformFeatures.map((f) => {
+        {platformFeatures.map((f, i) => {
           const Icon = icons[f.icon as keyof typeof icons] ?? BookOpen;
           return (
-            <article key={f.title} className="bg-ink p-8 transition-colors hover:bg-white/5">
+            <article
+              key={f.title}
+              className={`bg-ink p-8 transition-colors hover:bg-white/5 ${
+                i === platformFeatures.length - 1 ? "sm:col-span-2 lg:col-span-3" : ""
+              }`}
+            >
               <Icon className="size-6 text-accent" strokeWidth={1.25} />
               <h3 className="mt-6 text-lg text-white">{f.title}</h3>
               <p className="mt-2 text-sm text-white/60">{f.copy}</p>
