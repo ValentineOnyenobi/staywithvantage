@@ -424,43 +424,45 @@ function ElitePackagePage() {
           className="absolute inset-0 size-full object-cover"
         />
         <div className="absolute inset-0 bg-black/65" />
-        <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-8 px-5 py-24 sm:px-8 md:flex-row md:items-center md:justify-between md:py-28">
-          <div>
-            <h2 className="max-w-md text-3xl leading-snug text-white sm:text-4xl">
-              A better way to live. A better way to operate.
-            </h2>
-            <p className="mt-4 max-w-sm text-white/70">
-              Tell us about your property and we'll shape Elite Property Care around it.
-            </p>
-            <ul className="mt-8 grid max-w-md grid-cols-2 gap-x-6 gap-y-3 sm:grid-cols-4">
-              {pillars.map((p) => (
-                <li key={p.key} className="border-t border-white/20 pt-2">
-                  <p className="text-[0.6rem] tracking-[0.2em] text-white/45">{p.key}</p>
-                  <p className="mt-1 text-xs tracking-[0.1em] uppercase text-white/85">
-                    {p.label}
-                  </p>
-                </li>
-              ))}
-            </ul>
+        <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-10 px-5 py-24 sm:px-8 md:py-28">
+          <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+            <div>
+              <h2 className="max-w-md text-3xl leading-snug text-white sm:text-4xl">
+                A better way to live. A better way to operate.
+              </h2>
+              <p className="mt-4 max-w-sm text-white/70">
+                Tell us about your property and we'll shape Elite Property Care around it.
+              </p>
+            </div>
+            <div className="flex flex-wrap items-center gap-3">
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-xs tracking-[0.16em] uppercase text-ink transition-colors hover:bg-white/85"
+              >
+                Request a Quote
+                <ArrowRight className="size-4" aria-hidden />
+              </Link>
+              <a
+                href={whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-white/40 px-6 py-3.5 text-xs tracking-[0.16em] uppercase text-white transition-colors hover:bg-white/10"
+              >
+                <MessageCircle className="size-4" aria-hidden />
+                Chat on WhatsApp
+              </a>
+            </div>
           </div>
-          <div className="flex flex-wrap items-center gap-3">
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-xs tracking-[0.16em] uppercase text-ink transition-colors hover:bg-white/85"
-            >
-              Request a Quote
-              <ArrowRight className="size-4" aria-hidden />
-            </Link>
-            <a
-              href={whatsappHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-white/40 px-6 py-3.5 text-xs tracking-[0.16em] uppercase text-white transition-colors hover:bg-white/10"
-            >
-              <MessageCircle className="size-4" aria-hidden />
-              Chat on WhatsApp
-            </a>
-          </div>
+          <ul className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/15 bg-white/10 sm:grid-cols-4">
+            {pillars.map((p) => (
+              <li key={p.key} className="bg-black/30 px-5 py-5 backdrop-blur-sm">
+                <p className="text-[0.65rem] font-semibold tracking-[0.22em] text-white/50">{p.key}</p>
+                <p className="mt-2 text-sm tracking-[0.12em] uppercase text-white">
+                  {p.label}
+                </p>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
     </>
