@@ -16,6 +16,11 @@ import audPropertyManagers from "@/assets/aud-property-managers.jpg";
 import audCorporate from "@/assets/aud-corporate.jpg";
 import audCommercial from "@/assets/aud-commercial.jpg";
 import audIndustrial from "@/assets/aud-industrial.jpg";
+import flowGuest from "@/assets/flow-01-guest.jpg";
+import flowCapture from "@/assets/flow-02-capture.jpg";
+import flowRoute from "@/assets/flow-03-route.jpg";
+import flowTrack from "@/assets/flow-04-track.jpg";
+import flowVisibility from "@/assets/flow-05-visibility.jpg";
 
 export const images = {
   hero: heroSuite,
@@ -69,11 +74,47 @@ export const serviceLines = [
 ];
 
 export const howItWorks = [
-  { step: "01", title: "Guest scans a QR or submits a form", copy: "From the room, the lobby or a link." },
-  { step: "02", title: "StayWithVantage captures it", copy: "Every request logged in one place." },
-  { step: "03", title: "Routed to the right person", copy: "On your own team, by request type." },
-  { step: "04", title: "Status tracked", copy: "Received → In Progress → Resolved." },
-  { step: "05", title: "Manager has visibility", copy: "Live view and reporting across the property." },
+  {
+    step: "01",
+    stage: "Guest",
+    title: "Guest scans a QR",
+    titleLine2: "or submits a form",
+    copy: "From the room, the lobby or a link.",
+    image: flowGuest,
+    alt: "Guest scanning a QR code card with a phone in a premium serviced apartment",
+  },
+  {
+    step: "02",
+    stage: "Capture",
+    title: "StayWithVantage captures it",
+    copy: "Every request logged in one place.",
+    image: flowCapture,
+    alt: "Mobile request screen showing an air conditioner fault in Room 203 tagged Maintenance",
+  },
+  {
+    step: "03",
+    stage: "Route",
+    title: "Routed to the right person",
+    copy: "On your own team, by request type.",
+    image: flowRoute,
+    alt: "Operations screen routing a request to Maintenance, Housekeeping or Management",
+  },
+  {
+    step: "04",
+    stage: "Track",
+    title: "Status tracked",
+    copy: "Know where every request stands.",
+    image: flowTrack,
+    alt: "Mobile status timeline showing Received, In Progress and Resolved",
+  },
+  {
+    step: "05",
+    stage: "Visibility",
+    title: "Manager has visibility",
+    copy: "Live view and reporting across the property.",
+    image: flowVisibility,
+    alt: "Laptop dashboard listing property requests with their current statuses",
+  },
 ];
 
 export const handlerServices = [
