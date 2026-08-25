@@ -233,9 +233,10 @@ export function Estimator() {
             )}
 
             <p className="mt-8 text-xs leading-relaxed text-white/45">
-              Indicative estimate only — final pricing confirmed after a quick property assessment.
-              Larger properties, industrial cleaning, and the StayWithVantage Platform layer are
-              quoted separately.
+              Indicative estimate only — all figures are monthly service subscription estimates,
+              not one-off service prices. Final pricing is confirmed after a quick property
+              assessment. Larger properties, industrial cleaning, and the StayWithVantage Platform
+              layer are quoted separately.
             </p>
           </div>
 
