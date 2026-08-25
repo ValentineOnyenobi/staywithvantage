@@ -85,7 +85,7 @@ export function Estimator() {
 
   const linenCost = useMemo(() => {
     if (!linenOn) return 0;
-    const multiplier = linenFreq === 1 ? 4 : 8;
+    const multiplier = linenFreq === 1 ? 4 : linenFreq === 2 ? 8 : 12;
     return linenItems.reduce((sum, i) => sum + i.price * (qty[i.key] || 0) * multiplier, 0);
   }, [linenOn, linenFreq, qty]);
 
