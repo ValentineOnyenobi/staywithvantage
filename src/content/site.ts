@@ -49,10 +49,17 @@ export const whatsappHref = `https://wa.me/${contact.whatsappNumber}?text=${enco
 export const navLinks = [
   { label: "Home", to: "/" },
   { label: "Services", to: "/services" },
-  { label: "Platform", to: "/platform" },
   { label: "About", to: "/about" },
   { label: "Contact", to: "/contact" },
 ];
+
+export const footerSecondaryLinks = [
+  { label: "Platform", to: "/platform" },
+  { label: "Pricing Estimates", to: "/pricing-estimates" },
+  { label: "Terms of Service", to: "/terms" },
+  { label: "Privacy Policy", to: "/privacy" },
+];
+
 
 
 export const serviceLines = [

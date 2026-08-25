@@ -104,12 +104,13 @@ export function HandlersDetail() {
           </article>
         ))}
       </div>
-      <div className="mt-12">
+      <div className="mt-12 flex flex-col gap-3 sm:flex-row sm:items-center">
         <LinkButton to="/contact" variant="outline">
           Request a Quote
         </LinkButton>
-
+        <LinkButton to="/pricing-estimates">See Pricing Estimates</LinkButton>
       </div>
+
     </Section>
   );
 }

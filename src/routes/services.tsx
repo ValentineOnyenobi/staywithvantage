@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Eyebrow, LinkButton, Section } from "@/components/site/ui";
 import { HandlersDetail, PropertyCareSummary } from "@/components/site/Sections";
-import { Estimator } from "@/components/site/Estimator";
 import { PlatformTeaser } from "@/components/site/PlatformTeaser";
+
 
 const title = "Services — Elite Handlers & StayWithVantage Platform";
 const description =
