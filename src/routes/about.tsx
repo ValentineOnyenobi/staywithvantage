@@ -119,8 +119,8 @@ function AboutPage() {
         </div>
       </section>
 
-      {/* 3. OUR BELIEF */}
-      <section className="relative flex min-h-[68svh] items-center overflow-hidden">
+      {/* 3 + 4. OUR BELIEF & APPROACH */}
+      <section className="relative overflow-hidden">
         <img
           src={statement}
           alt="Serviced apartment living room in warm daylight"
@@ -129,29 +129,25 @@ function AboutPage() {
           height={1100}
           className="absolute inset-0 size-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/60" />
-        <div className="relative mx-auto w-full max-w-4xl px-5 py-24 text-center sm:px-8">
-          <p className="text-[0.6875rem] uppercase tracking-[0.22em] text-white/70">Our belief</p>
-          <h2 className="mt-5 text-2xl leading-tight text-white sm:text-4xl">
-            The property owner should stay in control.
-          </h2>
-          <p className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-white/85 sm:text-base">
-            We don&apos;t believe operators need another company to take over their business. They
-            need the right support around it.
-          </p>
-        </div>
-      </section>
+        <div className="absolute inset-0 bg-black/65" />
+        <div className="relative mx-auto w-full max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+          <div className="max-w-2xl">
+            <p className="text-[0.6875rem] uppercase tracking-[0.22em] text-white/70">Our belief</p>
+            <h2 className="mt-4 text-2xl leading-tight text-white sm:text-4xl">
+              The property owner should stay in control.
+            </h2>
+            <p className="mt-5 max-w-xl text-sm leading-relaxed text-white/85 sm:text-base">
+              We don&apos;t believe operators need another company to take over their business. They
+              need the right support around it.
+            </p>
+          </div>
 
-      {/* 4. OUR APPROACH */}
-      <section className="px-5 py-20 sm:px-8 md:py-28">
-        <div className="mx-auto w-full max-w-6xl">
-          <p className="eyebrow">Our approach</p>
-          <div className="mt-10 grid gap-10 sm:grid-cols-3 sm:gap-8">
+          <div className="mt-12 grid gap-8 border-t border-white/20 pt-10 sm:grid-cols-3 sm:gap-6">
             {principles.map((p, i) => (
-              <div key={p.title} className="border-t border-primary/20 pt-6">
-                <p className="text-xs tracking-[0.2em] text-muted-foreground">0{i + 1}</p>
-                <h3 className="mt-4 text-2xl">{p.title}</h3>
-                <p className="mt-3 max-w-xs text-muted-foreground">{p.copy}</p>
+              <div key={p.title}>
+                <p className="text-xs tracking-[0.2em] text-white/50">0{i + 1}</p>
+                <h3 className="mt-3 text-xl text-white">{p.title}</h3>
+                <p className="mt-2 max-w-xs text-sm text-white/80">{p.copy}</p>
               </div>
             ))}
           </div>
@@ -198,31 +194,30 @@ function AboutPage() {
         </div>
       </section>
 
-      {/* 6. TRUST */}
-      <section className="px-5 py-20 sm:px-8 md:py-28">
-        <div className="mx-auto w-full max-w-6xl">
-          <p className="eyebrow">Trust</p>
-          <h2 className="mt-4 max-w-xl text-2xl leading-tight sm:text-4xl">Built for operators.</h2>
-          <p className="mt-6 max-w-xl text-muted-foreground">
-            Designed around the realities of running property: people, guests, service, information
-            and the details that cannot be missed.
-          </p>
+      {/* 6 + 7. TRUST & CONTROL */}
+      <section className="px-5 py-16 sm:px-8 md:py-20">
+        <div className="mx-auto grid w-full max-w-6xl gap-10 md:grid-cols-2 md:gap-16">
+          <div className="border-t border-primary/20 pt-8">
+            <p className="eyebrow">Trust</p>
+            <h2 className="mt-4 text-2xl leading-tight sm:text-3xl">Built for operators.</h2>
+            <p className="mt-4 max-w-md text-muted-foreground">
+              Designed around the realities of running property: people, guests, service,
+              information and the details that cannot be missed.
+            </p>
+          </div>
+          <div className="border-t border-primary/20 pt-8">
+            <p className="eyebrow">Control</p>
+            <h2 className="mt-4 text-2xl leading-tight sm:text-3xl">You stay in control.</h2>
+            <p className="mt-4 max-w-md text-muted-foreground">
+              Your property, your team and your business stay yours. We work around your operation
+              and support the way you already run it.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Who it's for */}
       <Audiences />
-
-      {/* 7. CONTROL POSITIONING */}
-      <section className="px-5 pb-20 sm:px-8 md:pb-28">
-        <div className="mx-auto w-full max-w-3xl border-t border-border pt-12">
-          <h2 className="text-xl sm:text-2xl">You stay in control.</h2>
-          <p className="mt-4 max-w-xl text-muted-foreground">
-            Your property, your team and your business stay yours. We work around your operation and
-            support the way you already run it.
-          </p>
-        </div>
-      </section>
 
       {/* 8. CLOSING */}
       <section className="relative flex min-h-[70svh] items-center overflow-hidden">
