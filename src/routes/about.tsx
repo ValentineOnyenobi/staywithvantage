@@ -1,13 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Audiences } from "@/components/site/Sections";
-import { LinkButton } from "@/components/site/ui";
-import { whatsappHref } from "@/content/site";
 import heroSuite from "@/assets/hero-suite.jpg";
 import statement from "@/assets/statement.jpg";
 import housekeepingTeam from "@/assets/housekeeping-team.jpg";
 import pfTeaserGuest from "@/assets/pf-teaser-guest.jpg";
 import svcChef from "@/assets/svc-chef.jpg";
-import ctaProperty from "@/assets/cta-property.jpg";
 
 const title = "About StayWithVantage — A better stay starts behind the scenes";
 const description =
@@ -219,36 +216,6 @@ function AboutPage() {
       {/* Who it's for */}
       <Audiences />
 
-      {/* 8. CLOSING */}
-      <section className="relative flex min-h-[70svh] items-center overflow-hidden">
-        <img
-          src={ctaProperty}
-          alt="Apartment building facade glowing at dusk"
-          loading="lazy"
-          width={1920}
-          height={1088}
-          className="absolute inset-0 size-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black/60" />
-        <div className="relative mx-auto w-full max-w-6xl px-5 py-24 text-center sm:px-8">
-          <h2 className="mx-auto max-w-2xl text-3xl leading-tight text-white sm:text-5xl">
-            Your property. Your team. A better way to operate.
-          </h2>
-          <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <LinkButton to="/contact" className="bg-white text-primary hover:bg-white/90">
-              Get Started
-            </LinkButton>
-            <a
-              href={whatsappHref}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center justify-center rounded-full border border-white/50 px-6 py-3 text-sm tracking-wide text-white transition-colors duration-300 hover:bg-white hover:text-primary"
-            >
-              Chat on WhatsApp
-            </a>
-          </div>
-        </div>
-      </section>
     </>
   );
 }

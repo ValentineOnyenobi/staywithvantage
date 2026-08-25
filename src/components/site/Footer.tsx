@@ -1,6 +1,6 @@
-import { Instagram } from "lucide-react";
+import { Instagram, MessageCircle } from "lucide-react";
 import { Link } from "@tanstack/react-router";
-import { contact, footerSecondaryLinks, navLinks } from "@/content/site";
+import { contact, footerSecondaryLinks, navLinks, whatsappHref } from "@/content/site";
 import logoAsset from "@/assets/sv-logo.png.asset.json";
 
 export function Footer() {
@@ -22,14 +22,29 @@ export function Footer() {
             <br />
             Systems · Operations
           </p>
-          <a
-            href={contact.instagram}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-5 inline-flex items-center gap-2 text-sm text-white/60 transition-colors hover:text-white"
-          >
-            <Instagram className="size-4" /> Instagram
-          </a>
+          <div className="mt-6 flex items-center gap-4">
+            <a
+              href={contact.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="StayWithVantage on Instagram"
+              title="Instagram"
+              className="inline-flex size-9 items-center justify-center rounded-full text-white/60 ring-1 ring-white/15 transition-colors hover:bg-white/10 hover:text-white"
+            >
+              <Instagram className="size-4" />
+            </a>
+            <span aria-hidden className="h-5 w-px bg-white/15" />
+            <a
+              href={whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Chat with StayWithVantage on WhatsApp"
+              title="WhatsApp"
+              className="inline-flex size-9 items-center justify-center rounded-full text-white/60 ring-1 ring-white/15 transition-colors hover:bg-white/10 hover:text-white"
+            >
+              <MessageCircle className="size-4" />
+            </a>
+          </div>
         </div>
 
         <nav aria-label="Footer" className="flex flex-col items-start gap-2.5">
