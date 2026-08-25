@@ -65,7 +65,7 @@ export function Footer() {
           ))}
         </nav>
 
-        <div className="flex flex-col items-start gap-2.5 text-sm">
+        <div className="flex flex-col items-start gap-2 text-sm">
           <p className="text-[0.625rem] uppercase tracking-[0.2em] text-white/40">Contact</p>
           <a href={`mailto:${contact.email}`} className="transition-colors hover:text-white">
             {contact.email}
