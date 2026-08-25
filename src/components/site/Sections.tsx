@@ -13,7 +13,7 @@ import { Eyebrow, ExploreLink, LinkButton, ScrollButton, Section, TagRow } from 
 /* ------------------------------- 2. Hero ------------------------------- */
 export function Hero() {
   return (
-    <section id="home" className="relative flex min-h-[82svh] items-end overflow-hidden">
+    <section id="home" className="relative flex min-h-[90svh] items-end overflow-hidden">
       <img
         src={images.hero}
         alt="Sunlit boutique suite with linen bedding overlooking a terrace"
@@ -22,7 +22,7 @@ export function Hero() {
         className="absolute inset-0 size-full object-cover"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-black/40" />
-      <div className="relative mx-auto w-full max-w-6xl px-5 pb-44 pt-24 sm:px-8 sm:pb-52">
+      <div className="relative mx-auto w-full max-w-6xl px-5 pb-20 pt-24 sm:px-8 sm:pb-24">
         <ul className="flex flex-wrap items-center gap-x-3 gap-y-1.5 text-[0.6875rem] uppercase tracking-[0.2em] text-white/85 sm:gap-x-4">
           {["Property Care", "Guest Experience", "Systems", "Operations"].map((pillar, i) => (
             <li key={pillar} className="flex items-center gap-x-3 sm:gap-x-4">
