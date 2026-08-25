@@ -8,7 +8,6 @@ import svcGrocery from "@/assets/svc-grocery.jpg";
 import svcTraining from "@/assets/svc-training.jpg";
 import svcRoom from "@/assets/svc-room.jpg";
 import svcExperiences from "@/assets/svc-experiences.jpg";
-import svcOther from "@/assets/svc-other.jpg";
 import svcChef from "@/assets/svc-chef.jpg";
 
 const title = "StayWithVantage Platform — Guest Experience Layer for Properties";
