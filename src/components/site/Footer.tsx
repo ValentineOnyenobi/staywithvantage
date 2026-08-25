@@ -41,7 +41,7 @@ export function Footer() {
           </p>
         </div>
 
-        <nav aria-label="Footer" className="flex flex-col items-start gap-2.5">
+        <nav aria-label="Footer" className="flex flex-col items-start gap-2">
           <p className="text-[0.625rem] uppercase tracking-[0.2em] text-white/40">Explore</p>
           {navLinks
             .filter((link) => link.to !== "/elite-package")
