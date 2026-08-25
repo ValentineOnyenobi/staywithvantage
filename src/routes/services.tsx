@@ -23,22 +23,18 @@ export const Route = createFileRoute("/services")({
 function ServicesPage() {
   return (
     <>
-      <section className="border-b border-border bg-sand px-5 pb-14 pt-28 sm:px-8 sm:pb-16 sm:pt-32">
-        <div className="mx-auto grid w-full max-w-6xl gap-6 md:grid-cols-[minmax(0,1fr)_minmax(0,0.8fr)] md:items-end">
-          <div>
-            <Eyebrow>Services</Eyebrow>
-            <h1 className="mt-4 max-w-2xl text-4xl leading-[1.02] tracking-tight sm:text-5xl md:text-6xl">
-              One company.
-              <br />
-              Two ways we help.
-            </h1>
-          </div>
-          <p className="max-w-sm text-muted-foreground md:pb-2">
-            People on the ground keeping the property ready, and a guest-experience layer around the
-            stay.
-          </p>
+      <section className="border-b border-border bg-sand px-5 pb-16 pt-28 sm:px-8 sm:pb-20 sm:pt-32">
+        <div className="mx-auto w-full max-w-6xl">
+          <Eyebrow>Services</Eyebrow>
+          <h1 className="mt-5 max-w-3xl text-4xl leading-[1.02] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+            One company.
+            <br />
+            Two ways we help.
+          </h1>
+          <div className="mt-8 h-px w-24 bg-primary/25 sm:mt-10 sm:w-32" />
         </div>
       </section>
+
       <HandlersDetail />
 
       <PlatformTeaser />
