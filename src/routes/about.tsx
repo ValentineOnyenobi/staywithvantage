@@ -194,31 +194,30 @@ function AboutPage() {
         </div>
       </section>
 
-      {/* 6. TRUST */}
-      <section className="px-5 py-20 sm:px-8 md:py-28">
-        <div className="mx-auto w-full max-w-6xl">
-          <p className="eyebrow">Trust</p>
-          <h2 className="mt-4 max-w-xl text-2xl leading-tight sm:text-4xl">Built for operators.</h2>
-          <p className="mt-6 max-w-xl text-muted-foreground">
-            Designed around the realities of running property: people, guests, service, information
-            and the details that cannot be missed.
-          </p>
+      {/* 6 + 7. TRUST & CONTROL */}
+      <section className="px-5 py-16 sm:px-8 md:py-20">
+        <div className="mx-auto grid w-full max-w-6xl gap-10 md:grid-cols-2 md:gap-16">
+          <div className="border-t border-primary/20 pt-8">
+            <p className="eyebrow">Trust</p>
+            <h2 className="mt-4 text-2xl leading-tight sm:text-3xl">Built for operators.</h2>
+            <p className="mt-4 max-w-md text-muted-foreground">
+              Designed around the realities of running property: people, guests, service,
+              information and the details that cannot be missed.
+            </p>
+          </div>
+          <div className="border-t border-primary/20 pt-8">
+            <p className="eyebrow">Control</p>
+            <h2 className="mt-4 text-2xl leading-tight sm:text-3xl">You stay in control.</h2>
+            <p className="mt-4 max-w-md text-muted-foreground">
+              Your property, your team and your business stay yours. We work around your operation
+              and support the way you already run it.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Who it's for */}
       <Audiences />
-
-      {/* 7. CONTROL POSITIONING */}
-      <section className="px-5 pb-20 sm:px-8 md:pb-28">
-        <div className="mx-auto w-full max-w-3xl border-t border-border pt-12">
-          <h2 className="text-xl sm:text-2xl">You stay in control.</h2>
-          <p className="mt-4 max-w-xl text-muted-foreground">
-            Your property, your team and your business stay yours. We work around your operation and
-            support the way you already run it.
-          </p>
-        </div>
-      </section>
 
       {/* 8. CLOSING */}
       <section className="relative flex min-h-[70svh] items-center overflow-hidden">
