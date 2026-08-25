@@ -13,7 +13,7 @@ import { Eyebrow, ExploreLink, LinkButton, ScrollButton, Section, TagRow } from 
 /* ------------------------------- 2. Hero ------------------------------- */
 export function Hero() {
   return (
-    <section id="home" className="relative flex min-h-[90svh] items-end overflow-hidden">
+    <section id="home" className="relative flex min-h-[94svh] items-end overflow-hidden">
       <img
         src={images.hero}
         alt="Sunlit boutique suite with linen bedding overlooking a terrace"
