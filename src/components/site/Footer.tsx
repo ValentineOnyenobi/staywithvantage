@@ -74,6 +74,29 @@ export function Footer() {
             {contact.phone}
           </a>
           <span className="cursor-not-allowed text-white/40">Client Login — coming soon</span>
+          <div className="mt-1.5 flex items-center gap-3">
+            <a
+              href={contact.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="StayWithVantage on Instagram"
+              title="Instagram"
+              className="inline-flex size-8 items-center justify-center rounded-full text-white/60 ring-1 ring-white/15 transition-colors hover:bg-white/10 hover:text-white"
+            >
+              <Instagram className="size-4" />
+            </a>
+            <span aria-hidden className="h-4 w-px bg-white/15" />
+            <a
+              href={whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Chat with StayWithVantage on WhatsApp"
+              title="WhatsApp"
+              className="inline-flex size-8 items-center justify-center rounded-full text-white/60 ring-1 ring-white/15 transition-colors hover:bg-white/10 hover:text-white"
+            >
+              <WhatsAppIcon className="size-4" />
+            </a>
+          </div>
         </div>
       </div>
 
