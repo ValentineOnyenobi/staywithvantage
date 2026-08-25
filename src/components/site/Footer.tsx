@@ -1,6 +1,6 @@
-import { Instagram } from "lucide-react";
+import { Instagram, MessageCircle } from "lucide-react";
 import { Link } from "@tanstack/react-router";
-import { contact, footerSecondaryLinks, navLinks } from "@/content/site";
+import { contact, footerSecondaryLinks, navLinks, whatsappHref } from "@/content/site";
 import logoAsset from "@/assets/sv-logo.png.asset.json";
 
 export function Footer() {
