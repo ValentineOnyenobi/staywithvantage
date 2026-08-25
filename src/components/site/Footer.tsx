@@ -1,12 +1,12 @@
 import { Instagram } from "lucide-react";
 import { Link } from "@tanstack/react-router";
-import { contact, navLinks } from "@/content/site";
+import { contact, footerSecondaryLinks, navLinks } from "@/content/site";
 import logoAsset from "@/assets/sv-logo.png.asset.json";
 
 export function Footer() {
   return (
     <footer className="bg-ink px-5 py-16 text-white/70 sm:px-8">
-      <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-[1.2fr_1fr_1fr]">
+      <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-[1.2fr_1fr_1fr_1fr]">
         <div>
           <span className="inline-flex items-center justify-center rounded-2xl bg-white p-3 ring-1 ring-white/20">
             <img
@@ -38,6 +38,14 @@ export function Footer() {
           ))}
         </nav>
 
+        <nav aria-label="More" className="flex flex-col items-start gap-3">
+          {footerSecondaryLinks.map((link) => (
+            <Link key={link.to} to={link.to} className="text-sm transition-colors hover:text-white">
+              {link.label}
+            </Link>
+          ))}
+        </nav>
+
         <div className="space-y-3 text-sm">
           <a href={`mailto:${contact.email}`} className="block transition-colors hover:text-white">
             {contact.email}
@@ -48,6 +56,7 @@ export function Footer() {
           <span className="block cursor-not-allowed text-white/40">Client Login — coming soon</span>
         </div>
       </div>
+
 
       <div className="mx-auto mt-14 max-w-6xl border-t border-white/10 pt-6 text-xs text-white/40">
         © {new Date().getFullYear()} StayWithVantage. All rights reserved.
