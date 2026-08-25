@@ -9,6 +9,13 @@ import industrial from "@/assets/industrial.jpg";
 import ctaProperty from "@/assets/cta-property.jpg";
 import statement from "@/assets/statement.jpg";
 import housekeepingDetail from "@/assets/housekeeping-detail.jpg";
+import audHotels from "@/assets/aud-hotels.jpg";
+import audServicedApartments from "@/assets/aud-serviced-apartments.jpg";
+import audShortLets from "@/assets/aud-short-lets.jpg";
+import audPropertyManagers from "@/assets/aud-property-managers.jpg";
+import audCorporate from "@/assets/aud-corporate.jpg";
+import audCommercial from "@/assets/aud-commercial.jpg";
+import audIndustrial from "@/assets/aud-industrial.jpg";
 
 export const images = {
   hero: heroSuite,
@@ -137,13 +144,14 @@ export const testimonials = [
 ];
 
 export const audiences = [
-  "Hotels",
-  "Serviced Apartments",
-  "Short-Lets",
-  "Property Managers",
-  "Corporate Accommodation",
-  "Commercial",
-  "Industrial",
+  { label: "Hotels", image: audHotels, alt: "Boutique hotel lobby at dusk" },
+  { label: "Serviced Apartments", image: audServicedApartments, alt: "Serviced apartment living space in warm daylight" },
+  { label: "Short-Lets", image: audShortLets, alt: "Short-let bedroom with fresh linen and keys" },
+  { label: "Property Managers", image: audPropertyManagers, alt: "Property management desk with floorplans and keys" },
+  { label: "Corporate Accommodation", image: audCorporate, alt: "Corporate long-stay apartment with desk and city view" },
+  { label: "Commercial", image: audCommercial, alt: "Commercial office lobby with stone and glass" },
+  { label: "Industrial", image: audIndustrial, alt: "Clean industrial warehouse interior" },
 ];
+
 
 export const interestOptions = ["Elite Handlers", "Platform", "Elite Property Care"];

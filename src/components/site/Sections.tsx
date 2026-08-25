@@ -304,14 +304,24 @@ export function Audiences() {
       <h2 className="mt-4 max-w-xl text-3xl sm:text-4xl">Built for properties with standards.</h2>
       <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
         {audiences.map((a) => (
-          <div
-            key={a}
-            className="flex min-h-28 items-end bg-secondary p-5 text-sm transition-colors hover:bg-sand"
+          <figure
+            key={a.label}
+            className="group relative flex aspect-[4/5] items-end overflow-hidden rounded-lg sm:aspect-[3/4]"
           >
-            {a}
-          </div>
+            <img
+              src={a.image}
+              alt={a.alt}
+              loading="lazy"
+              width={800}
+              height={1000}
+              className="absolute inset-0 size-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent" />
+            <figcaption className="relative p-4 text-sm text-white sm:p-5">{a.label}</figcaption>
+          </figure>
         ))}
       </div>
+
     </Section>
   );
 }
