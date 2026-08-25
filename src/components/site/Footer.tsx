@@ -22,8 +22,8 @@ function WhatsAppIcon(props: SVGProps<SVGSVGElement>) {
 
 export function Footer() {
   return (
-    <footer className="bg-ink px-5 py-14 text-white/70 sm:px-8 sm:py-16">
-      <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-[1.4fr_1fr_1fr_1.1fr] md:gap-12">
+    <footer className="bg-ink px-5 py-10 text-white/70 sm:px-8 sm:py-12">
+      <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-[1.4fr_1fr_1fr_1.1fr] md:gap-10">
         <div className="flex flex-col items-start">
           <span className="inline-flex items-center justify-center rounded-xl bg-white p-2.5 ring-1 ring-white/15">
             <img
