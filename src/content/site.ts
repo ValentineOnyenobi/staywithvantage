@@ -49,6 +49,7 @@ export const whatsappHref = `https://wa.me/${contact.whatsappNumber}?text=${enco
 export const navLinks = [
   { label: "Home", to: "/" },
   { label: "Services", to: "/services" },
+  { label: "Elite Package", to: "/elite-package" },
   { label: "About", to: "/about" },
   { label: "Contact", to: "/contact" },
 ];

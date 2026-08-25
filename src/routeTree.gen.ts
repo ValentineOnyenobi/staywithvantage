@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as ElitePackageRouteImport } from './routes/elite-package'
 import { Route as PlatformRouteImport } from './routes/platform'
 import { Route as PricingEstimatesRouteImport } from './routes/pricing-estimates'
 import { Route as PrivacyRouteImport } from './routes/privacy'
@@ -31,6 +32,11 @@ const AboutRoute = AboutRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ElitePackageRoute = ElitePackageRouteImport.update({
+  id: '/elite-package',
+  path: '/elite-package',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PlatformRoute = PlatformRouteImport.update({
@@ -63,6 +69,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/elite-package': typeof ElitePackageRoute
   '/platform': typeof PlatformRoute
   '/pricing-estimates': typeof PricingEstimatesRoute
   '/privacy': typeof PrivacyRoute
@@ -73,6 +80,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/elite-package': typeof ElitePackageRoute
   '/platform': typeof PlatformRoute
   '/pricing-estimates': typeof PricingEstimatesRoute
   '/privacy': typeof PrivacyRoute
@@ -84,6 +92,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/elite-package': typeof ElitePackageRoute
   '/platform': typeof PlatformRoute
   '/pricing-estimates': typeof PricingEstimatesRoute
   '/privacy': typeof PrivacyRoute
@@ -96,6 +105,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/elite-package'
     | '/platform'
     | '/pricing-estimates'
     | '/privacy'
@@ -106,6 +116,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/elite-package'
     | '/platform'
     | '/pricing-estimates'
     | '/privacy'
@@ -116,6 +127,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/elite-package'
     | '/platform'
     | '/pricing-estimates'
     | '/privacy'
@@ -127,6 +139,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
+  ElitePackageRoute: typeof ElitePackageRoute
   PlatformRoute: typeof PlatformRoute
   PricingEstimatesRoute: typeof PricingEstimatesRoute
   PrivacyRoute: typeof PrivacyRoute
@@ -155,6 +168,13 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/elite-package': {
+      id: '/elite-package'
+      path: '/elite-package'
+      fullPath: '/elite-package'
+      preLoaderRoute: typeof ElitePackageRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/platform': {
@@ -199,6 +219,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
+  ElitePackageRoute: ElitePackageRoute,
   PlatformRoute: PlatformRoute,
   PricingEstimatesRoute: PricingEstimatesRoute,
   PrivacyRoute: PrivacyRoute,
