@@ -158,8 +158,9 @@ export function Estimator() {
                 <OptionGroup
                   legend="Linen frequency"
                   options={[
-                    { value: 1 as LinenFreq, label: "Weekly" },
+                    { value: 1 as LinenFreq, label: "1× weekly" },
                     { value: 2 as LinenFreq, label: "2× weekly" },
+                    { value: 3 as LinenFreq, label: "3× weekly" },
                   ]}
                   value={linenFreq}
                   onChange={setLinenFreq}
