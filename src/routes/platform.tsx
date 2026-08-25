@@ -32,7 +32,7 @@ const examples = [
   { label: "Personal training", image: svcTraining },
   { label: "Private Chef", image: svcChef },
   { label: "Room services", image: svcRoom },
-  { label: "Experiences", image: svcExperiences },
+  { label: "Laundry", image: svcExperiences },
 
 ];
 
