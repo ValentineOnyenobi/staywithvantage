@@ -8,7 +8,7 @@ import svcGrocery from "@/assets/svc-grocery.jpg";
 import svcTraining from "@/assets/svc-training.jpg";
 import svcRoom from "@/assets/svc-room.jpg";
 import svcExperiences from "@/assets/svc-experiences.jpg";
-import svcOther from "@/assets/svc-other.jpg";
+import svcChef from "@/assets/svc-chef.jpg";
 
 const title = "StayWithVantage Platform — Guest Experience Layer for Properties";
 const description =
@@ -30,9 +30,10 @@ const examples = [
   { label: "Airport transfers", image: svcTransfer },
   { label: "Grocery", image: svcGrocery },
   { label: "Personal training", image: svcTraining },
+  { label: "Private Chef", image: svcChef },
   { label: "Room services", image: svcRoom },
   { label: "Experiences", image: svcExperiences },
-  { label: "Other guest services", image: svcOther },
+
 ];
 
 const logic = [
@@ -87,7 +88,7 @@ function PlatformPage() {
           <div className="space-y-6 text-base leading-relaxed text-muted-foreground">
             <p>
               StayWithVantage is the layer through which services can be presented, requested and
-              coordinated during a stay. Fulfilment stays with the property, its team, or the
+              coordinated during a stay — from airport transfers to a Private Chef. Fulfilment stays with the property, its team, or the
               relevant service provider.
             </p>
             <p>

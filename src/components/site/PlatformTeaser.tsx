@@ -9,6 +9,7 @@ const opportunities = [
   "Airport Transfer",
   "Grocery",
   "Personal Trainer",
+  "Private Chef",
   "Experiences",
   "Guest Services",
 ];
@@ -93,11 +94,12 @@ export function PlatformTeaser() {
             <ul className="pointer-events-none absolute inset-0 hidden lg:block">
               {opportunities.map((label, i) => {
                 const pos = [
-                  "left-[6%] top-[16%]",
-                  "left-[2%] top-[44%]",
+                  "left-[6%] top-[14%]",
+                  "left-[2%] top-[42%]",
                   "left-[10%] bottom-[12%]",
-                  "right-[6%] top-[24%]",
-                  "right-[3%] bottom-[18%]",
+                  "right-[8%] bottom-[42%]",
+                  "right-[6%] top-[20%]",
+                  "right-[3%] bottom-[14%]",
                 ][i];
                 return (
                   <li
