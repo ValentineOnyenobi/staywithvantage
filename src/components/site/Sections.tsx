@@ -22,7 +22,7 @@ export function Hero() {
         className="absolute inset-0 size-full object-cover"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-black/40" />
-      <ul className="absolute inset-x-0 top-[57%] z-10 mx-auto flex w-full max-w-6xl flex-wrap items-center gap-x-3 gap-y-1.5 px-5 text-[0.6875rem] uppercase tracking-[0.2em] text-white/90 [text-shadow:0_1px_8px_rgba(0,0,0,0.55)] sm:px-8 sm:gap-x-4">
+      <ul className="absolute inset-x-0 top-[63%] z-10 mx-auto flex w-full max-w-6xl flex-wrap items-center gap-x-3 gap-y-1.5 px-5 text-[0.6875rem] uppercase tracking-[0.2em] text-white/90 [text-shadow:0_1px_8px_rgba(0,0,0,0.55)] sm:top-[57%] sm:px-8 sm:gap-x-4">
         {["Property Care", "Guest Experience", "Systems", "Operations"].map((pillar, i) => (
           <li key={pillar} className="flex items-center gap-x-3 sm:gap-x-4">
             {i > 0 && <span aria-hidden className="size-1 rounded-full bg-white/40" />}
