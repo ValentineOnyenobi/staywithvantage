@@ -119,8 +119,8 @@ function AboutPage() {
         </div>
       </section>
 
-      {/* 3. OUR BELIEF */}
-      <section className="relative flex min-h-[68svh] items-center overflow-hidden">
+      {/* 3 + 4. OUR BELIEF & APPROACH */}
+      <section className="relative overflow-hidden">
         <img
           src={statement}
           alt="Serviced apartment living room in warm daylight"
@@ -129,29 +129,25 @@ function AboutPage() {
           height={1100}
           className="absolute inset-0 size-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/60" />
-        <div className="relative mx-auto w-full max-w-4xl px-5 py-24 text-center sm:px-8">
-          <p className="text-[0.6875rem] uppercase tracking-[0.22em] text-white/70">Our belief</p>
-          <h2 className="mt-5 text-2xl leading-tight text-white sm:text-4xl">
-            The property owner should stay in control.
-          </h2>
-          <p className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-white/85 sm:text-base">
-            We don&apos;t believe operators need another company to take over their business. They
-            need the right support around it.
-          </p>
-        </div>
-      </section>
+        <div className="absolute inset-0 bg-black/65" />
+        <div className="relative mx-auto w-full max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+          <div className="max-w-2xl">
+            <p className="text-[0.6875rem] uppercase tracking-[0.22em] text-white/70">Our belief</p>
+            <h2 className="mt-4 text-2xl leading-tight text-white sm:text-4xl">
+              The property owner should stay in control.
+            </h2>
+            <p className="mt-5 max-w-xl text-sm leading-relaxed text-white/85 sm:text-base">
+              We don&apos;t believe operators need another company to take over their business. They
+              need the right support around it.
+            </p>
+          </div>
 
-      {/* 4. OUR APPROACH */}
-      <section className="px-5 py-20 sm:px-8 md:py-28">
-        <div className="mx-auto w-full max-w-6xl">
-          <p className="eyebrow">Our approach</p>
-          <div className="mt-10 grid gap-10 sm:grid-cols-3 sm:gap-8">
+          <div className="mt-12 grid gap-8 border-t border-white/20 pt-10 sm:grid-cols-3 sm:gap-6">
             {principles.map((p, i) => (
-              <div key={p.title} className="border-t border-primary/20 pt-6">
-                <p className="text-xs tracking-[0.2em] text-muted-foreground">0{i + 1}</p>
-                <h3 className="mt-4 text-2xl">{p.title}</h3>
-                <p className="mt-3 max-w-xs text-muted-foreground">{p.copy}</p>
+              <div key={p.title}>
+                <p className="text-xs tracking-[0.2em] text-white/50">0{i + 1}</p>
+                <h3 className="mt-3 text-xl text-white">{p.title}</h3>
+                <p className="mt-2 max-w-xs text-sm text-white/80">{p.copy}</p>
               </div>
             ))}
           </div>
