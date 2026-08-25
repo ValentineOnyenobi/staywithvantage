@@ -1,18 +1,7 @@
 import {
-  BookOpen,
-  Boxes,
-  ClipboardList,
-  QrCode,
-  ScanLine,
-  Sparkles,
-  Wrench,
-  Workflow,
-} from "lucide-react";
-import {
   audiences,
   handlerServices,
   images,
-  platformFeatures,
   reassurances,
   serviceLines,
   testimonials,
