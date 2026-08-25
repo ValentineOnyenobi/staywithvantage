@@ -42,13 +42,14 @@ export function Hero() {
           Make your property easier to run.
         </h1>
         <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-          <ScrollButton to="enquiry" className="bg-white text-primary hover:bg-white/90">
+          <LinkButton to="/contact" className="bg-white text-primary hover:bg-white/90">
             Get Started
-          </ScrollButton>
+          </LinkButton>
           <ScrollButton to="how-it-works" variant="light">
             See how it works
           </ScrollButton>
         </div>
+
       </div>
     </section>
   );
@@ -81,7 +82,10 @@ export function WhatWeDo() {
             </div>
             <p className="mt-4 max-w-sm text-muted-foreground">{line.line}</p>
             <div className="mt-6">
-              <ExploreLink to={line.exploreId}>Explore</ExploreLink>
+              <ExploreLink to="/services" hash={line.exploreId}>
+                Explore
+              </ExploreLink>
+
             </div>
           </article>
         ))}
@@ -140,9 +144,10 @@ export function HandlersDetail() {
         ))}
       </div>
       <div className="mt-12">
-        <ScrollButton to="enquiry" variant="outline">
+        <LinkButton to="/contact" variant="outline">
           Request a Quote
-        </ScrollButton>
+        </LinkButton>
+
       </div>
     </Section>
   );
@@ -185,45 +190,37 @@ export function PlatformDetail() {
         })}
       </div>
       <div className="mt-12">
-        <ScrollButton to="enquiry" variant="light">
+        <LinkButton to="/contact" variant="light">
           Get Started
-        </ScrollButton>
+        </LinkButton>
       </div>
     </Section>
   );
 }
 
 /* ------------------------- 7. Elite Property Care ----------------------- */
-export function PropertyCare() {
+export function PropertyCareSummary() {
   return (
     <Section id="property-care" className="bg-sand">
       <div className="max-w-2xl">
         <Eyebrow>Combined proposition</Eyebrow>
         <h2 className="mt-4 text-4xl sm:text-5xl">Elite Property Care.</h2>
-        <p className="mt-4 text-lg text-muted-foreground">One property. One coordinated operation.</p>
-      </div>
-      <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-5">
-        {propertyCareCards.map((c) => (
-          <article key={c.title} className="group relative overflow-hidden">
-            <img
-              src={c.image}
-              alt={c.title}
-              loading="lazy"
-              width={1200}
-              height={1500}
-              className="h-52 w-full object-cover transition-transform duration-700 group-hover:scale-105 md:h-64"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-            <h3 className="absolute inset-x-0 bottom-0 p-4 text-base text-white">{c.title}</h3>
-          </article>
-        ))}
-      </div>
-      <div className="mt-12">
-        <ScrollButton to="enquiry">Get a Quote</ScrollButton>
+        <p className="mt-4 text-lg text-muted-foreground">
+          One property. One coordinated operation.
+        </p>
+        <p className="mt-4 text-muted-foreground">
+          Elite Handlers on the ground and the StayWithVantage Platform behind them — one point of
+          contact, one standard of record, across housekeeping, linen, guest experience and
+          reporting.
+        </p>
+        <div className="mt-10">
+          <LinkButton to="/contact">Get a Quote</LinkButton>
+        </div>
       </div>
     </Section>
   );
 }
+
 
 /* ------------------------ 8. Statement / About ------------------------- */
 export function Statement() {
