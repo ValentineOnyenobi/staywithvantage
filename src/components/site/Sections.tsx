@@ -125,50 +125,6 @@ export function HandlersDetail() {
   );
 }
 
-/* --------------------------- 6. Platform detail ------------------------- */
-const icons = {
-  book: BookOpen,
-  qr: QrCode,
-  form: ClipboardList,
-  wrench: Wrench,
-  box: Boxes,
-  sparkle: Sparkles,
-  flow: Workflow,
-  scan: ScanLine,
-} as const;
-
-export function PlatformDetail() {
-  return (
-    <Section id="platform" className="bg-ink text-white">
-      <p className="eyebrow text-white/50">StayWithVantage Platform</p>
-      <h2 className="mt-4 max-w-xl text-3xl text-white sm:text-4xl">
-        The systems behind a calm operation.
-      </h2>
-      <div className="mt-12 grid gap-px overflow-hidden border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-3">
-        {platformFeatures.map((f, i) => {
-          const Icon = icons[f.icon as keyof typeof icons] ?? BookOpen;
-          return (
-            <article
-              key={f.title}
-              className={`bg-ink p-8 transition-colors hover:bg-white/5 ${
-                i === platformFeatures.length - 1 ? "sm:col-span-2 lg:col-span-3" : ""
-              }`}
-            >
-              <Icon className="size-6 text-accent" strokeWidth={1.25} />
-              <h3 className="mt-6 text-lg text-white">{f.title}</h3>
-              <p className="mt-2 text-sm text-white/60">{f.copy}</p>
-            </article>
-          );
-        })}
-      </div>
-      <div className="mt-12">
-        <LinkButton to="/contact" variant="light">
-          Get Started
-        </LinkButton>
-      </div>
-    </Section>
-  );
-}
 
 /* ------------------------- 7. Elite Property Care ----------------------- */
 export function PropertyCareSummary() {
