@@ -11,7 +11,6 @@ import {
 import {
   audiences,
   handlerServices,
-  howItWorks,
   images,
   platformFeatures,
   reassurances,
@@ -90,33 +89,6 @@ export function WhatWeDo() {
           </article>
         ))}
       </div>
-    </Section>
-  );
-}
-
-/* ---------------------------- 4. How it works --------------------------- */
-export function HowItWorks() {
-  return (
-    <Section id="how-it-works" className="bg-secondary/60">
-      <Eyebrow>How it works</Eyebrow>
-      <h2 className="mt-4 max-w-2xl text-3xl sm:text-4xl">
-        Information moves. Your team stays in control.
-      </h2>
-      <ol className="mt-12 grid gap-8 md:grid-cols-5 md:gap-5">
-        {howItWorks.map((s) => (
-          <li key={s.step} className="border-t border-primary/20 pt-5">
-            <span className="font-[family-name:var(--font-display)] text-sm text-accent-foreground/70">
-              {s.step}
-            </span>
-            <h3 className="mt-3 text-lg leading-snug">{s.title}</h3>
-            <p className="mt-2 text-sm text-muted-foreground">{s.copy}</p>
-          </li>
-        ))}
-      </ol>
-      <p className="mt-12 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-        StayWithVantage coordinates information. The work itself is performed either by your own
-        team or by the StayWithVantage Property Care team.
-      </p>
     </Section>
   );
 }
