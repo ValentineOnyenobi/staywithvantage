@@ -1,0 +1,150 @@
+// ---------------------------------------------------------------------------
+// All editable site content lives here. Swap text, images and links freely.
+// ---------------------------------------------------------------------------
+import heroSuite from "@/assets/hero-suite.jpg";
+import housekeepingTeam from "@/assets/housekeeping-team.jpg";
+import platformQr from "@/assets/platform-qr.jpg";
+import linen from "@/assets/linen.jpg";
+import industrial from "@/assets/industrial.jpg";
+import ctaProperty from "@/assets/cta-property.jpg";
+import statement from "@/assets/statement.jpg";
+import housekeepingDetail from "@/assets/housekeeping-detail.jpg";
+
+export const images = {
+  hero: heroSuite,
+  housekeepingTeam,
+  platformQr,
+  linen,
+  industrial,
+  ctaProperty,
+  statement,
+  housekeepingDetail,
+};
+
+// PLACEHOLDER — replace with the real WhatsApp business number (digits only).
+export const contact = {
+  whatsappNumber: "10000000000",
+  whatsappMessage: "Hi StayWithVantage, I'd like to know more about your services.",
+  email: "hello@staywithvantage.com",
+  phone: "+1 (000) 000-0000",
+  instagram: "https://instagram.com/staywithvantage",
+};
+
+export const whatsappHref = `https://wa.me/${contact.whatsappNumber}?text=${encodeURIComponent(
+  contact.whatsappMessage,
+)}`;
+
+export const navLinks = [
+  { label: "Home", id: "home" },
+  { label: "Elite Handlers", id: "handlers" },
+  { label: "Platform", id: "platform" },
+  { label: "Elite Property Care", id: "property-care" },
+  { label: "About", id: "about" },
+  { label: "Contact", id: "enquiry" },
+];
+
+export const serviceLines = [
+  {
+    id: "handlers",
+    eyebrow: "Elite Handlers",
+    tags: ["Housekeeping", "Linen", "Industrial"],
+    line: "People on the ground, keeping your property ready.",
+    image: images.housekeepingTeam,
+    exploreId: "handlers",
+  },
+  {
+    id: "platform",
+    eyebrow: "StayWithVantage Platform",
+    tags: ["Guest Experience", "QR & Guidebooks", "Reporting"],
+    line: "The systems that keep everyone coordinated.",
+    image: images.platformQr,
+    exploreId: "platform",
+  },
+];
+
+export const howItWorks = [
+  { step: "01", title: "Guest scans a QR or submits a form", copy: "From the room, the lobby or a link." },
+  { step: "02", title: "StayWithVantage captures it", copy: "Every request logged in one place." },
+  { step: "03", title: "Routed to the right person", copy: "On your own team, by request type." },
+  { step: "04", title: "Status tracked", copy: "Received → In Progress → Resolved." },
+  { step: "05", title: "Manager has visibility", copy: "Live view and reporting across the property." },
+];
+
+export const handlerServices = [
+  {
+    title: "Housekeeping",
+    copy: "Property care, not just cleaning — we observe and report condition, not only tidy it.",
+    image: images.housekeepingDetail,
+  },
+  {
+    title: "Linen & Bedsheets Management",
+    copy: "Collect, wash, dry, iron, rotate.",
+    image: images.linen,
+  },
+  {
+    title: "Industrial Cleaning",
+    copy: "Commercial, warehouse, factory, facility — contract-based.",
+    image: images.industrial,
+  },
+];
+
+export const platformFeatures = [
+  { title: "Guest Guidebook", copy: "Everything about the stay, on the guest's phone.", icon: "book" },
+  { title: "QR Codes", copy: "One scan into forms, guides and requests.", icon: "qr" },
+  { title: "Guest Forms", copy: "Requests and issues captured in structured detail.", icon: "form" },
+  { title: "Maintenance Reports", copy: "Faults logged, routed and tracked to resolution.", icon: "wrench" },
+  { title: "Restocking Reports", copy: "Know what ran out before the guest does.", icon: "box" },
+  { title: "Housekeeping Reports", copy: "Room condition recorded on every service.", icon: "sparkle" },
+  { title: "Team Workflows", copy: "Clear ownership and status for your own staff.", icon: "flow" },
+];
+
+export const propertyCareCards = [
+  { title: "Housekeeping", image: images.housekeepingTeam },
+  { title: "Linen", image: images.linen },
+  { title: "Guest Experience", image: images.platformQr },
+  { title: "Reporting", image: images.housekeepingDetail },
+  { title: "Team Coordination", image: images.statement },
+];
+
+export const reassurances = [
+  "We do not acquire guests for you.",
+  "We do not set your pricing.",
+  "We do not manage your revenue.",
+  "We do not replace your team.",
+];
+
+export const trustPoints = [
+  { title: "Vetted & trained staff", copy: "Screened, inducted and supervised." },
+  { title: "Consistent reporting", copy: "The same standard of record, every visit." },
+  { title: "Insurance & bonding", copy: "Placeholder — cover details to be added." },
+];
+
+export const testimonials = [
+  {
+    quote: "Our turnovers stopped being a daily negotiation. Everything is logged and visible.",
+    name: "Operations Manager",
+    org: "Serviced apartments",
+  },
+  {
+    quote: "The reporting alone changed how we plan maintenance across the building.",
+    name: "General Manager",
+    org: "Boutique hotel",
+  },
+  {
+    quote: "Our own team still runs the property — they just finally have a system.",
+    name: "Portfolio Manager",
+    org: "Short-let operator",
+  },
+];
+
+export const audiences = [
+  "Hotels",
+  "Serviced Apartments",
+  "Short-Lets",
+  "Property Managers",
+  "Corporate Accommodation",
+  "Commercial",
+  "Industrial",
+];
+
+export const interestOptions = ["Elite Handlers", "Platform", "Elite Property Care"];
