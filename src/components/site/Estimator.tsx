@@ -200,7 +200,7 @@ export function Estimator() {
         {/* Estimate */}
         <div className="flex flex-col justify-between gap-8 bg-ink p-7 text-white sm:p-10">
           <div>
-            <p className="text-xs uppercase tracking-[0.2em] text-white/50">Monthly estimate</p>
+            <p className="text-xs uppercase tracking-[0.2em] text-white/50">Monthly subscription estimate</p>
             <p
               aria-live="polite"
               className={cn(
