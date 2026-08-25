@@ -116,28 +116,6 @@ export function HandlersDetail() {
 }
 
 
-/* ------------------------- 7. Elite Property Care ----------------------- */
-export function PropertyCareSummary() {
-  return (
-    <Section id="property-care" className="bg-sand">
-      <div className="max-w-2xl">
-        <Eyebrow>Combined proposition</Eyebrow>
-        <h2 className="mt-4 text-4xl sm:text-5xl">Elite Property Care.</h2>
-        <p className="mt-4 text-lg text-muted-foreground">
-          One property. One coordinated operation.
-        </p>
-        <p className="mt-4 text-muted-foreground">
-          Elite Handlers on the ground and the StayWithVantage Platform behind them — one point of
-          contact, one standard of record, across housekeeping, linen, guest experience and
-          reporting.
-        </p>
-        <div className="mt-10">
-          <LinkButton to="/contact">Get a Quote</LinkButton>
-        </div>
-      </div>
-    </Section>
-  );
-}
 
 
 /* ------------------------ 8. Statement / About ------------------------- */
