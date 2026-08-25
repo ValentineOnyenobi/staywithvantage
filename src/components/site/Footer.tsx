@@ -34,7 +34,7 @@ export function Footer() {
               className="size-12 object-contain"
             />
           </span>
-          <p className="mt-4 text-sm leading-relaxed text-white/75">
+          <p className="mt-3 text-sm leading-relaxed text-white/75">
             Property Care · Guest Experience
             <br />
             Systems · Operations
