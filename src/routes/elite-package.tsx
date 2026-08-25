@@ -78,13 +78,20 @@ function ElitePackagePage() {
             A better way to operate.
           </p>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-white/70">
-            One integrated package. Elite Handlers keeps the property ready through monthly
-            subscription care. StayWithVantage enhances the experience around the stay. Together,
-            care, guest experience and smarter property support come from one point of contact.
+            One integrated package, built around four connected areas — so care, guest experience
+            and smarter property support come from one point of contact.
           </p>
-          <p className="mt-8 text-xs tracking-[0.16em] uppercase text-white/55">
-            Housekeeping · Linen · Guest Experience · Operational Support
-          </p>
+          <ul className="mt-7 flex flex-wrap items-center gap-x-3 gap-y-2 text-[0.7rem] tracking-[0.18em] uppercase text-white/80">
+            {pillars.map((p, i) => (
+              <li key={p.key} className="flex items-center gap-3">
+                {i > 0 && <span aria-hidden className="text-white/30">·</span>}
+                <span className="flex items-baseline gap-2">
+                  <span className="text-white/40">{p.key}</span>
+                  {p.label}
+                </span>
+              </li>
+            ))}
+          </ul>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <LinkButton to="/contact" className="bg-white text-primary hover:bg-white/90">
               Request a Quote
