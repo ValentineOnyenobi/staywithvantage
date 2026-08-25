@@ -32,8 +32,10 @@ function ServicesPage() {
         </div>
       </Section>
       <HandlersDetail />
+      <Estimator />
       <PlatformDetail />
       <PropertyCareSummary />
+
     </>
   );
 }
