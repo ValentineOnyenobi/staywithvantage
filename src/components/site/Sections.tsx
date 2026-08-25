@@ -22,17 +22,16 @@ export function Hero() {
         className="absolute inset-0 size-full object-cover"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-black/40" />
+      <ul className="absolute inset-x-0 top-[53%] z-10 mx-auto flex w-full max-w-6xl flex-wrap items-center gap-x-3 gap-y-1.5 px-5 text-[0.6875rem] uppercase tracking-[0.2em] text-white/90 sm:px-8 sm:gap-x-4">
+        {["Property Care", "Guest Experience", "Systems", "Operations"].map((pillar, i) => (
+          <li key={pillar} className="flex items-center gap-x-3 sm:gap-x-4">
+            {i > 0 && <span aria-hidden className="size-1 rounded-full bg-white/40" />}
+            <span>{pillar}</span>
+          </li>
+        ))}
+      </ul>
       <div className="relative mx-auto w-full max-w-6xl px-5 pb-20 pt-32 sm:px-8 sm:pb-24">
-        <ul className="flex flex-wrap items-center gap-x-3 gap-y-1.5 text-[0.6875rem] uppercase tracking-[0.2em] text-white/85 sm:gap-x-4">
-          {["Property Care", "Guest Experience", "Systems", "Operations"].map((pillar, i) => (
-            <li key={pillar} className="flex items-center gap-x-3 sm:gap-x-4">
-              {i > 0 && <span aria-hidden className="size-1 rounded-full bg-white/40" />}
-              <span>{pillar}</span>
-            </li>
-          ))}
-        </ul>
-
-        <h1 className="mt-5 max-w-3xl text-4xl leading-[1.05] text-white sm:text-6xl md:text-7xl">
+        <h1 className="max-w-3xl text-4xl leading-[1.05] text-white sm:text-6xl md:text-7xl">
           Make your property easier to run.
         </h1>
         <div className="mt-9 flex flex-col gap-3 sm:flex-row">
