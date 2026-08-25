@@ -14,13 +14,13 @@ import {
   howItWorks,
   images,
   platformFeatures,
-  propertyCareCards,
   reassurances,
   serviceLines,
   testimonials,
   trustPoints,
 } from "@/content/site";
-import { Eyebrow, ExploreLink, ScrollButton, Section, TagRow } from "./ui";
+import { Eyebrow, ExploreLink, LinkButton, ScrollButton, Section, TagRow } from "./ui";
+
 
 /* ------------------------------- 2. Hero ------------------------------- */
 export function Hero() {
