@@ -109,6 +109,9 @@ export function Estimator() {
         Pricing is built from two simple parts — property care and linen — combined at a discount
         when you take both. This is an indicative self-qualification tool, not a binding quote.
       </p>
+      <p className="mt-3 inline-flex items-center gap-2 rounded-full border border-primary/15 bg-primary/5 px-4 py-1.5 text-xs uppercase tracking-[0.14em] text-primary/80">
+        Elite Handlers · Monthly service subscription
+      </p>
 
       <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-primary/15 bg-primary/10 lg:grid-cols-[1.15fr_1fr]">
         {/* Controls */}
