@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 
 type Size = "small" | "four" | "larger";
 type Freq = 1 | 2 | 3;
-type LinenFreq = 1 | 2;
+type LinenFreq = 1 | 2 | 3;
 
 const sizeOptions: { value: Size; label: string }[] = [
   { value: "small", label: "1–2 bedroom" },
