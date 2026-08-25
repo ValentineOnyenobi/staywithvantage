@@ -72,8 +72,7 @@ export function LinkButton({
 }) {
   return (
     <Link
-      to={to}
-      hash={hash}
+      {...({ to, ...(hash ? { hash } : {}) } as { to: string })}
       className={cn(buttonBase, variantClass(variant), className)}
     >
       {children}
@@ -92,8 +91,7 @@ export function ExploreLink({
 }) {
   return (
     <Link
-      to={to}
-      hash={hash}
+      {...({ to, ...(hash ? { hash } : {}) } as { to: string })}
       className="group inline-flex items-center gap-2 text-sm tracking-wide text-primary"
     >
       <span className="border-b border-primary/30 pb-1 transition-colors group-hover:border-primary">
@@ -105,6 +103,7 @@ export function ExploreLink({
     </Link>
   );
 }
+
 
 export function TagRow({ tags }: { tags: string[] }) {
   return (
