@@ -81,17 +81,15 @@ function ElitePackagePage() {
             One integrated package, built around four connected areas — so care, guest experience
             and smarter property support come from one point of contact.
           </p>
-          <ul className="mt-7 flex flex-wrap items-center gap-x-3 gap-y-2 text-[0.7rem] tracking-[0.18em] uppercase text-white/80">
+          <div className="mt-7 inline-flex flex-wrap items-center gap-x-4 gap-y-2 rounded-2xl border border-white/20 bg-black/35 px-5 py-3 backdrop-blur-sm">
             {pillars.map((p, i) => (
-              <li key={p.key} className="flex items-center gap-3">
-                {i > 0 && <span aria-hidden className="text-white/30">·</span>}
-                <span className="flex items-baseline gap-2">
-                  <span className="text-white/40">{p.key}</span>
-                  {p.label}
-                </span>
-              </li>
+              <span key={p.key} className="flex items-center gap-2 text-xs tracking-[0.16em] uppercase text-white">
+                {i > 0 && <span aria-hidden className="text-white/35">·</span>}
+                <span className="font-semibold text-white/55">{p.key}</span>
+                {p.label}
+              </span>
             ))}
-          </ul>
+          </div>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <LinkButton to="/contact" className="bg-white text-primary hover:bg-white/90">
               Request a Quote
