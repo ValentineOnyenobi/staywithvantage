@@ -33,7 +33,7 @@ function ServicesPage() {
         </div>
       </Section>
       <HandlersDetail />
-      <Estimator />
+      
       <PlatformTeaser />
       <PropertyCareSummary />
 
