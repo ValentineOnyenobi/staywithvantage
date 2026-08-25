@@ -3,10 +3,17 @@ import { Link } from "@tanstack/react-router";
 import { MessageCircle } from "lucide-react";
 import { whatsappHref } from "@/content/site";
 import { cn } from "@/lib/utils";
-import propertyImg from "@/assets/pf-01-property.jpg";
-import guestImg from "@/assets/pf-02-guest.jpg";
-import careImg from "@/assets/pf-03-care.jpg";
-import teamImg from "@/assets/pf-04-team.jpg";
+import heroGuest from "@/assets/gs-hero-guest.jpg";
+import expImg from "@/assets/gs-experience.jpg";
+import revImg from "@/assets/gs-revenue.jpg";
+import opsImg from "@/assets/gs-operations.jpg";
+import portfolioImg from "@/assets/gs-portfolio.jpg";
+import svcTransfer from "@/assets/svc-transfer.jpg";
+import svcGrocery from "@/assets/svc-grocery.jpg";
+import svcTraining from "@/assets/svc-training.jpg";
+import svcRoom from "@/assets/svc-room.jpg";
+import svcExperiences from "@/assets/svc-experiences.jpg";
+import svcOther from "@/assets/svc-other.jpg";
 
 /* -------------------------------- reveal -------------------------------- */
 function useReveal<T extends HTMLElement>() {
@@ -54,7 +61,7 @@ function Reveal({
       ref={ref}
       style={{ transitionDelay: `${delay}ms` }}
       className={cn(
-        "transition-all duration-700 ease-out motion-reduce:transition-none",
+        "transition-all duration-700 ease-out motion-reduce:transition-none motion-reduce:opacity-100",
         shown ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0",
         className,
       )}
@@ -64,541 +71,384 @@ function Reveal({
   );
 }
 
-const kicker = "text-[0.625rem] uppercase tracking-[0.2em]";
-
-/* ------------------------------ 1. Opening ------------------------------ */
-const fragments = [
-  { who: "Guest", text: "Where is the Wi-Fi?" },
-  { who: "Guest", text: "AC not working." },
-  { who: "Housekeeping", text: "Room needs extra supplies." },
-  { who: "Housekeeping", text: "Something is damaged." },
-  { who: "Maintenance", text: "Repair requested." },
-  { who: "Manager", text: "Has this been resolved?" },
+/* ------------------------------ phone mockup ----------------------------- */
+const conciergeItems = [
+  "Room Service",
+  "Airport Transfer",
+  "Grocery",
+  "Personal Trainer",
+  "Experiences",
+  "Other Guest Services",
 ];
 
-const scatter = [
-  "sm:translate-x-2 sm:-rotate-[1.2deg]",
-  "sm:translate-x-10 sm:rotate-[1.4deg]",
-  "sm:-translate-x-1 sm:rotate-[0.8deg]",
-  "sm:translate-x-12 sm:-rotate-[1deg]",
-  "sm:translate-x-4 sm:rotate-[1.1deg]",
-  "sm:translate-x-8 sm:-rotate-[0.7deg]",
-];
-
-function Opening() {
+function ConciergePhone({ className }: { className?: string }) {
+  const { ref, shown } = useReveal<HTMLDivElement>();
   return (
-    <section id="platform" className="scroll-mt-20 px-5 py-24 sm:px-8 md:py-32">
-      <div className="mx-auto w-full max-w-6xl">
-        <Reveal>
-          <p className="eyebrow">StayWithVantage Platform</p>
-          <h2 className="mt-5 max-w-3xl text-3xl uppercase leading-[1.1] tracking-[-0.01em] sm:text-5xl">
-            Your property is running. But who is connecting everything?
-          </h2>
-          <p className="mt-6 max-w-xl text-muted-foreground">
-            Guests, housekeeping, maintenance and management generate information every day.
-            StayWithVantage gives that information somewhere to go — and gives your team a clearer
-            way to act on it.
+    <div
+      ref={ref}
+      className={cn(
+        "w-[15rem] rounded-[2rem] border border-white/25 bg-primary/90 p-2 shadow-2xl backdrop-blur-sm sm:w-[16.5rem]",
+        className,
+      )}
+      aria-hidden
+    >
+      <div className="overflow-hidden rounded-[1.6rem] bg-background">
+        <div className="border-b border-primary/10 px-5 pb-4 pt-5">
+          <p className="text-[0.5625rem] uppercase tracking-[0.22em] text-muted-foreground">
+            Your stay
           </p>
-        </Reveal>
-
-        <div className="mt-16 grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-14">
-          {/* scattered fragments */}
-          <div className="relative">
-            <div className="grid gap-3 sm:gap-4">
-              {fragments.map((f, i) => (
-                <Reveal key={f.text} delay={i * 110}>
-                  <div
-                    className={cn(
-                      "rounded-lg border border-border bg-card/90 px-4 py-3 shadow-[0_1px_0_rgba(0,0,0,0.02)] backdrop-blur transition-transform duration-500 sm:px-5 sm:py-4",
-                      "max-w-[22rem] sm:max-w-[24rem]",
-                      scatter[i],
-                    )}
-                  >
-                    <span className={cn(kicker, "text-accent-foreground/70")}>{f.who}</span>
-                    <p className="mt-1.5 text-sm sm:text-base">“{f.text}”</p>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-            {/* converging paths */}
-            <span
-              aria-hidden
-              className="pointer-events-none absolute -right-6 top-8 hidden h-[calc(100%-4rem)] w-24 lg:block"
+          <p className="mt-2 font-[family-name:var(--font-display)] text-base leading-snug">
+            Good afternoon.
+            <br />
+            How can we help?
+          </p>
+        </div>
+        <ul className="divide-y divide-primary/10">
+          {conciergeItems.map((item, i) => (
+            <li
+              key={item}
+              style={{ transitionDelay: `${200 + i * 110}ms` }}
+              className={cn(
+                "flex items-center justify-between px-5 py-3 text-[0.8125rem] transition-all duration-500 ease-out motion-reduce:transition-none motion-reduce:opacity-100",
+                shown ? "translate-x-0 opacity-100" : "translate-x-3 opacity-0",
+              )}
             >
-              <span className="absolute inset-y-0 left-1/2 w-px bg-gradient-to-b from-transparent via-primary/25 to-transparent" />
-              <span className="absolute left-1/2 top-1/2 h-px w-10 -translate-y-1/2 bg-gradient-to-r from-primary/30 to-primary/50" />
-              <span className="absolute right-0 top-1/2 -translate-y-1/2 text-xs text-primary/60 motion-safe:animate-pulse">
-                →
-              </span>
-            </span>
-          </div>
+              <span>{item}</span>
+              <span className="text-muted-foreground">→</span>
+            </li>
+          ))}
+        </ul>
+        <div className="bg-sand px-5 py-3">
+          <p className="text-[0.5625rem] uppercase tracking-[0.22em] text-muted-foreground">
+            StayWithVantage
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
 
-          {/* converged layer */}
-          <Reveal delay={220}>
-            <div className="relative overflow-hidden rounded-lg border border-primary/15">
-              <img
-                src={propertyImg}
-                alt="Warm boutique hotel reception at golden hour"
-                loading="lazy"
-                width={1600}
-                height={1008}
-                className="h-64 w-full object-cover sm:h-80"
-              />
-              <div className="bg-ink px-6 py-8 sm:px-8 sm:py-10">
-                <p className={cn(kicker, "text-white/45")}>The StayWithVantage layer</p>
-                <p className="mt-4 font-[family-name:var(--font-display)] text-xl leading-snug text-white sm:text-2xl">
-                  The property was already generating the information.
-                  <br />
-                  <span className="text-accent">StayWithVantage makes it useful.</span>
-                </p>
-              </div>
-            </div>
+/* ------------------------------- 1. Hero -------------------------------- */
+const journey = ["Booking", "Arrival", "Stay", "Guest Services", "More Value"];
+
+function PlatformHero() {
+  return (
+    <section id="platform" className="relative scroll-mt-20 overflow-hidden bg-primary">
+      <img
+        src={heroGuest}
+        alt="Guest relaxing with a phone in a premium serviced apartment"
+        loading="lazy"
+        width={1600}
+        height={1200}
+        className="absolute inset-0 size-full object-cover opacity-60"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/45" />
+      <div className="relative mx-auto w-full max-w-6xl px-5 py-24 sm:px-8 md:py-32">
+        <div className="grid items-end gap-12 lg:grid-cols-[1.15fr_auto] lg:gap-10">
+          <Reveal>
+            <p className="text-[0.6875rem] uppercase tracking-[0.22em] text-white/65">
+              StayWithVantage · Hospitality Optimisation Layer
+            </p>
+            <h2 className="mt-6 max-w-2xl text-4xl leading-[1.02] text-white sm:text-6xl md:text-7xl">
+              Make more from
+              <br />
+              every stay.
+            </h2>
+            <p className="mt-7 max-w-xl text-white/80">
+              StayWithVantage connects your guests to the services, information and experiences they
+              need — while creating new opportunities to increase revenue per stay.
+            </p>
+          </Reveal>
+          <Reveal delay={150} className="lg:justify-self-end">
+            <ConciergePhone />
           </Reveal>
         </div>
+
+        {/* journey */}
+        <Reveal delay={250} className="mt-16 border-t border-white/15 pt-6">
+          <ol className="flex flex-wrap items-center gap-x-3 gap-y-2 text-[0.625rem] uppercase tracking-[0.2em] text-white/60">
+            {journey.map((stage, i) => (
+              <li key={stage} className="flex items-center gap-3">
+                <span className={i === journey.length - 1 ? "text-white" : undefined}>{stage}</span>
+                {i < journey.length - 1 && (
+                  <span aria-hidden className="text-white/35">
+                    →
+                  </span>
+                )}
+              </li>
+            ))}
+          </ol>
+        </Reveal>
       </div>
     </section>
   );
 }
 
-/* ------------------------- 2. All the little things --------------------- */
-type Story = {
-  id: string;
-  index: string;
-  area: string;
-  headline: string;
-  copy: string;
-  outcome: string;
-  image?: string;
-  alt?: string;
-  visual?: ReactNode;
-};
-
-function CoordinationVisual() {
-  const chain = ["Guest request", "Housekeeping", "Maintenance", "Manager"];
-  return (
-    <div className="flex h-full flex-col justify-center gap-4 bg-secondary/60 p-8 sm:p-10">
-      {chain.map((c, i) => (
-        <div key={c} className="flex items-center gap-4">
-          <span className="grid size-8 shrink-0 place-items-center rounded-full border border-primary/25 bg-background text-[0.625rem] text-muted-foreground">
-            {i + 1}
-          </span>
-          <span className="flex-1 rounded-full border border-primary/15 bg-card px-4 py-2.5 text-sm">
-            {c}
-          </span>
-          {i < chain.length - 1 && (
-            <span aria-hidden className="text-xs text-primary/40 motion-safe:animate-pulse">
-              ↓
-            </span>
-          )}
-        </div>
-      ))}
-    </div>
-  );
-}
-
-const dashboardStats = [
-  { label: "Open", value: 8 },
-  { label: "In progress", value: 5 },
-  { label: "Resolved", value: 12 },
-  { label: "Restocking", value: 3 },
-  { label: "Maintenance", value: 2 },
-  { label: "Housekeeping", value: 4 },
-];
-
-function DashboardVisual() {
-  return (
-    <div className="flex h-full flex-col justify-center bg-ink p-7 sm:p-9">
-      <div className="flex items-baseline justify-between">
-        <p className={cn(kicker, "text-white/45")}>StayWithVantage · Property overview</p>
-        <span className={cn(kicker, "text-white/30")}>Illustrative</span>
-      </div>
-      <div className="mt-6 grid grid-cols-3 gap-px overflow-hidden border border-white/10 bg-white/10">
-        {dashboardStats.map((s) => (
-          <div key={s.label} className="bg-ink px-3 py-5 sm:px-4 sm:py-6">
-            <p className="font-[family-name:var(--font-display)] text-2xl text-white sm:text-3xl">
-              {s.value}
-            </p>
-            <p className="mt-1.5 text-[0.5625rem] uppercase tracking-[0.16em] text-white/45">
-              {s.label}
-            </p>
-          </div>
-        ))}
-      </div>
-      <p className="mt-4 text-[0.6875rem] text-white/35">
-        Sample data shown for illustration only.
-      </p>
-    </div>
-  );
-}
-
-const stories: Story[] = [
-  {
-    id: "guest-experience",
-    index: "A",
-    area: "Guest experience",
-    headline: "Let guests help themselves.",
-    copy: "Give guests instant access to the information they need and a simple way to ask for help when they need it.",
-    outcome: "Fewer questions. Better experience.",
-    image: guestImg,
-    alt: "Guest holding a phone showing a digital guidebook beside a QR card",
-  },
-  {
-    id: "property-care",
-    index: "B",
-    area: "Property care",
-    headline: "Know what's happening inside the property.",
-    copy: "Turn what your team sees during a service into useful property information.",
-    outcome: "Not just clean. Observed.",
-    image: careImg,
-    alt: "Housekeeper folding fresh linen with a checklist tablet on the bed",
-  },
-  {
-    id: "team-coordination",
-    index: "C",
-    area: "Team coordination",
-    headline: "Stop chasing people for updates.",
-    copy: "Give every request, issue and task a clear place to go — without replacing the people already doing the work.",
-    outcome: "Less chasing. More clarity.",
-    visual: <CoordinationVisual />,
-  },
-  {
-    id: "management-visibility",
-    index: "D",
-    area: "Management visibility",
-    headline: "Know what needs your attention.",
-    copy: "See what is happening across the operation without having to be everywhere yourself.",
-    outcome: "Visibility without micromanagement.",
-    visual: <DashboardVisual />,
-  },
-];
-
-function LittleThings() {
+/* --------------------------- 2. Proposition ----------------------------- */
+function Proposition() {
   return (
     <section className="bg-sand px-5 py-24 sm:px-8 md:py-32">
       <div className="mx-auto w-full max-w-6xl">
         <Reveal>
-          <h2 className="max-w-2xl text-3xl uppercase leading-[1.12] sm:text-4xl">
-            All the little things that keep a property moving.
+          <h2 className="max-w-4xl text-4xl leading-[1.03] sm:text-6xl md:text-[4.5rem]">
+            Your guest is already there.
+            <br />
+            Now give them more to buy.
           </h2>
-        </Reveal>
-
-        <div className="mt-16 space-y-16 sm:space-y-24">
-          {stories.map((s, i) => (
-            <Reveal key={s.id}>
-              <article
-                className={cn(
-                  "grid gap-8 md:grid-cols-2 md:items-center md:gap-12",
-                  i % 2 === 1 && "md:[&>*:first-child]:order-2",
-                )}
-              >
-                <div className="overflow-hidden rounded-lg border border-primary/10">
-                  {s.image ? (
-                    <img
-                      src={s.image}
-                      alt={s.alt ?? s.area}
-                      loading="lazy"
-                      width={1408}
-                      height={1056}
-                      className="h-64 w-full object-cover transition-transform duration-700 hover:scale-[1.02] sm:h-[22rem]"
-                    />
-                  ) : (
-                    <div className="h-64 sm:h-[22rem]">{s.visual}</div>
-                  )}
-                </div>
-
-                <div className={cn(i % 2 === 1 && "md:pr-4")}>
-                  <p className={cn(kicker, "text-accent-foreground/70")}>
-                    {s.index} · {s.area}
-                  </p>
-                  <h3 className="mt-4 max-w-sm text-2xl uppercase leading-tight sm:text-[1.75rem]">
-                    {s.headline}
-                  </h3>
-                  <p className="mt-4 max-w-md text-muted-foreground">{s.copy}</p>
-                  <p className="mt-7 inline-block border-t border-primary/25 pt-3 text-sm uppercase tracking-[0.14em]">
-                    {s.outcome}
-                  </p>
-                  {s.id === "guest-experience" && (
-                    <p className="mt-4 text-xs uppercase tracking-[0.16em] text-muted-foreground">
-                      QR code → digital guide → guest request
-                    </p>
-                  )}
-                  {s.id === "property-care" && (
-                    <p className="mt-4 text-xs uppercase tracking-[0.16em] text-muted-foreground">
-                      Housekeeping · Restocking · Condition · Maintenance
-                    </p>
-                  )}
-                </div>
-              </article>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* --------------------------- 3. Operating layer -------------------------- */
-function OperatingLayer() {
-  const inputs = ["Guests", "Property", "Team", "Management"];
-  return (
-    <section className="bg-ink px-5 py-24 text-white sm:px-8 md:py-36">
-      <div className="mx-auto w-full max-w-6xl">
-        <Reveal>
-          <p className={cn(kicker, "text-white/45")}>The operating layer</p>
-          <h2 className="mt-5 max-w-3xl text-3xl uppercase leading-[1.1] text-white sm:text-5xl">
-            Not another tool. Your property's operating layer.
-          </h2>
-          <p className="mt-6 max-w-2xl text-white/60">
-            StayWithVantage connects the small pieces of property operations that are easy to
-            overlook — guest requests, property information, housekeeping, maintenance, restocking
-            and team activity.
+          <p className="mt-8 max-w-xl text-lg text-muted-foreground">
+            Turn the guest journey into an opportunity to deliver more value — and generate
+            additional revenue.
           </p>
         </Reveal>
-
-        <Reveal delay={150}>
-          <div className="mt-16 grid gap-8 lg:grid-cols-[1fr_auto_1fr] lg:items-center lg:gap-10">
-            <div className="grid grid-cols-2 gap-3">
-              {inputs.map((n) => (
-                <div
-                  key={n}
-                  className="rounded-lg border border-white/15 px-4 py-6 text-center text-sm uppercase tracking-[0.14em] text-white/80"
-                >
-                  {n}
-                </div>
-              ))}
-            </div>
-
-            <div className="flex items-center justify-center gap-3 lg:flex-col">
-              <span aria-hidden className="text-white/35 motion-safe:animate-pulse">
-                <span className="hidden lg:inline">↓</span>
-                <span className="lg:hidden">↓</span>
-              </span>
-              <div className="rounded-full border border-accent/50 bg-accent/10 px-6 py-4 text-center">
-                <p className="font-[family-name:var(--font-display)] text-sm uppercase tracking-[0.18em] text-accent">
-                  StayWithVantage
-                </p>
-              </div>
-              <span aria-hidden className="text-white/35 motion-safe:animate-pulse">
-                ↓
-              </span>
-            </div>
-
-            <div className="rounded-lg border border-white/15 bg-white/5 px-8 py-10 text-center lg:py-16">
-              <p className="font-[family-name:var(--font-display)] text-2xl uppercase leading-tight text-white sm:text-3xl">
-                One clearer
-                <br />
-                operation
-              </p>
-            </div>
-          </div>
-        </Reveal>
       </div>
     </section>
   );
 }
 
-/* ---------------------------- 4. Why it matters -------------------------- */
-const comparison = [
-  { without: "Guest questions live in messages", with: "Guests have a direct information layer" },
-  { without: "Maintenance requests get lost", with: "Requests have somewhere to go" },
-  { without: "Restocking is discovered late", with: "Property conditions are reported" },
-  { without: "Managers chase updates", with: "Managers have visibility" },
+/* ---------------------------- 3. Value areas ---------------------------- */
+const valueAreas = [
+  {
+    num: "01",
+    title: "Better guest experience",
+    copy: "Give guests useful services and information exactly when they need them.",
+    image: expImg,
+    alt: "Welcome tray with linen, keys and a phone in a premium suite",
+  },
+  {
+    num: "02",
+    title: "More revenue per stay",
+    copy: "Embed relevant guest services and create additional revenue opportunities during the stay.",
+    image: revImg,
+    alt: "In-room dining service being placed in a premium suite",
+  },
+  {
+    num: "03",
+    title: "Better operations",
+    copy: "Connect guest requests, property information and your team so the operation stays organised.",
+    image: opsImg,
+    alt: "Hospitality team member reviewing requests on a tablet",
+  },
 ];
 
-function WhyItMatters() {
-  return (
-    <section className="px-5 py-24 sm:px-8 md:py-32">
-      <div className="mx-auto w-full max-w-6xl">
-        <Reveal>
-          <h2 className="max-w-2xl text-3xl uppercase leading-[1.12] sm:text-4xl">
-            Why property operators need it
-          </h2>
-        </Reveal>
-
-        <div className="mt-14 grid gap-px overflow-hidden border border-border bg-border sm:grid-cols-2">
-          <div className="bg-muted/60 px-6 py-7 sm:px-9">
-            <p className={cn(kicker, "text-muted-foreground")}>Without StayWithVantage</p>
-          </div>
-          <div className="bg-secondary px-6 py-7 sm:px-9">
-            <p className={cn(kicker, "text-accent-foreground/80")}>With StayWithVantage</p>
-          </div>
-          {comparison.map((c, i) => (
-            <div key={c.with} className="contents">
-              <Reveal delay={i * 90} className="bg-muted/30">
-                <p className="px-6 py-7 text-muted-foreground line-through decoration-muted-foreground/30 sm:px-9 sm:py-8">
-                  {c.without}
-                </p>
-              </Reveal>
-              <Reveal delay={i * 90 + 60} className="bg-card">
-                <p className="px-6 py-7 sm:px-9 sm:py-8">{c.with}</p>
-              </Reveal>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ------------------------------ 5. Scale -------------------------------- */
-function Scale() {
-  const steps = ["One property", "Multiple properties", "Portfolio"];
-  return (
-    <section className="bg-secondary/60 px-5 py-24 sm:px-8 md:py-32">
-      <div className="mx-auto w-full max-w-6xl">
-        <Reveal>
-          <h2 className="max-w-2xl text-3xl uppercase leading-[1.12] sm:text-4xl">
-            Start with one property. Build a better operation.
-          </h2>
-          <p className="mt-5 max-w-xl text-muted-foreground">
-            What works for one property can become the operating layer across your portfolio.
-          </p>
-        </Reveal>
-
-        <Reveal delay={140}>
-          <div className="mt-14">
-            <div className="grid gap-4 sm:grid-cols-3">
-              {steps.map((s, i) => (
-                <div
-                  key={s}
-                  className="relative rounded-lg border border-primary/15 bg-card px-6 py-8"
-                >
-                  <p className="font-[family-name:var(--font-display)] text-xs tracking-[0.18em] text-accent-foreground/70">
-                    0{i + 1}
-                  </p>
-                  <p className="mt-4 text-lg uppercase leading-tight">{s}</p>
-                  <div
-                    aria-hidden
-                    className="mt-5 flex gap-1.5"
-                    style={{ opacity: 0.35 + i * 0.3 }}
-                  >
-                    {Array.from({ length: i === 0 ? 1 : i === 1 ? 3 : 6 }).map((_, k) => (
-                      <span key={k} className="h-8 w-2.5 rounded-sm bg-primary/40" />
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="mt-4 rounded-lg border border-accent/40 bg-accent/10 px-6 py-4 text-center text-xs uppercase tracking-[0.2em] text-accent-foreground">
-              One StayWithVantage layer underneath
-            </div>
-          </div>
-        </Reveal>
-      </div>
-    </section>
-  );
-}
-
-/* --------------------------- 6. Powered by ------------------------------ */
-const capabilities = [
-  "QR codes",
-  "Digital guidebooks",
-  "Guest forms",
-  "Housekeeping reports",
-  "Maintenance reports",
-  "Restocking reports",
-  "Team workflows",
-];
-
-function PoweredBy() {
-  return (
-    <section className="border-y border-border px-5 py-14 sm:px-8">
-      <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 md:flex-row md:items-center md:gap-12">
-        <p className={cn(kicker, "shrink-0 text-muted-foreground")}>Powered by</p>
-        <ul className="flex flex-wrap gap-x-6 gap-y-3">
-          {capabilities.map((c) => (
-            <li
-              key={c}
-              className="text-xs uppercase tracking-[0.14em] text-muted-foreground transition-colors hover:text-foreground"
-            >
-              {c}
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
-  );
-}
-
-/* -------------------------- 7. Elite Handlers --------------------------- */
-function LayerRelationship() {
+function ValueAreas() {
   return (
     <section className="px-5 py-24 sm:px-8 md:py-28">
+      <div className="mx-auto w-full max-w-6xl space-y-20 md:space-y-28">
+        {valueAreas.map((v, i) => (
+          <Reveal key={v.num}>
+            <article
+              className={cn(
+                "grid items-center gap-8 md:grid-cols-2 md:gap-14",
+                i % 2 === 1 && "md:[&>figure]:order-2",
+              )}
+            >
+              <figure className="overflow-hidden rounded-lg">
+                <img
+                  src={v.image}
+                  alt={v.alt}
+                  loading="lazy"
+                  width={1408}
+                  height={1056}
+                  className="h-72 w-full object-cover transition-transform duration-700 hover:scale-[1.03] sm:h-[26rem]"
+                />
+              </figure>
+              <div>
+                <span className="font-[family-name:var(--font-display)] text-sm tracking-[0.2em] text-accent-foreground/70">
+                  {v.num}
+                </span>
+                <h3 className="mt-4 max-w-sm text-3xl leading-tight sm:text-4xl">{v.title}</h3>
+                <p className="mt-5 max-w-md text-muted-foreground">{v.copy}</p>
+              </div>
+            </article>
+          </Reveal>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/* -------------------------- 4. Guest services --------------------------- */
+const services = [
+  { label: "Airport Transfers", image: svcTransfer, alt: "Private car at a boutique property entrance at dusk" },
+  { label: "Grocery", image: svcGrocery, alt: "Fresh grocery provisions on an apartment kitchen counter" },
+  { label: "Personal Training", image: svcTraining, alt: "Private fitness session in a warm-toned hotel gym" },
+  { label: "Room Services", image: svcRoom, alt: "Breakfast tray on fresh bed linen in a premium suite" },
+  { label: "Experiences", image: svcExperiences, alt: "Coastal experience at golden hour" },
+  { label: "Other Services", image: svcOther, alt: "Concierge desk detail with a brass bell and folded linen" },
+];
+
+function GuestServices() {
+  return (
+    <section className="bg-secondary/60 px-5 py-24 sm:px-8 md:py-28">
       <div className="mx-auto w-full max-w-6xl">
         <Reveal>
-          <div className="grid gap-10 md:grid-cols-[1fr_1fr] md:gap-8">
-            <div className="rounded-lg border border-primary/15 p-8 sm:p-10">
-              <p className={cn(kicker, "text-accent-foreground/70")}>Digital layer</p>
-              <h3 className="mt-4 text-xl uppercase">StayWithVantage</h3>
-              <p className="mt-3 text-sm text-muted-foreground">
-                The guest-experience and operational layer — it coordinates information and
-                workflows.
-              </p>
-            </div>
-            <div className="rounded-lg border border-primary/15 p-8 sm:p-10">
-              <p className={cn(kicker, "text-accent-foreground/70")}>Physical layer</p>
-              <h3 className="mt-4 text-xl uppercase">Elite Handlers</h3>
-              <p className="mt-3 text-sm text-muted-foreground">
-                The specialist services layer — it can provide applicable physical property care
-                services.
-              </p>
-            </div>
+          <p className="eyebrow">The guest services layer</p>
+          <h2 className="mt-4 max-w-2xl text-3xl sm:text-4xl">
+            Services that belong inside the stay.
+          </h2>
+        </Reveal>
+        <Reveal delay={80}>
+          <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+            {services.map((s) => (
+              <figure
+                key={s.label}
+                className="group relative flex aspect-[3/4] items-end overflow-hidden rounded-lg"
+              >
+                <img
+                  src={s.image}
+                  alt={s.alt}
+                  loading="lazy"
+                  width={800}
+                  height={1000}
+                  className="absolute inset-0 size-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
+                <figcaption className="relative p-3 text-[0.625rem] uppercase tracking-[0.16em] text-white sm:p-4">
+                  {s.label}
+                </figcaption>
+              </figure>
+            ))}
           </div>
         </Reveal>
-
         <Reveal delay={140}>
-          <div className="mt-4 rounded-lg bg-sand px-8 py-10 sm:px-10">
-            <p className={cn(kicker, "text-accent-foreground/80")}>Elite Property Care package</p>
-            <p className="mt-4 font-[family-name:var(--font-display)] text-2xl sm:text-3xl">
-              StayWithVantage <span className="text-accent-foreground/70">×</span> Elite Handlers
-            </p>
-            <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-              StayWithVantage coordinates information and workflows. Elite Handlers can provide
-              applicable physical property care services. Your own team can also remain responsible
-              for their own work — nothing about your staffing has to change.
-            </p>
-          </div>
+          <p className="mt-8 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+            These are examples of services that can be embedded into the guest journey — not
+            services StayWithVantage personally provides. StayWithVantage provides the
+            infrastructure and guest-experience layer through which services can be presented,
+            requested and coordinated.
+          </p>
         </Reveal>
       </div>
     </section>
   );
 }
 
-/* ------------------------------- 8. CTA --------------------------------- */
+/* --------------------------- 5. Operator value -------------------------- */
+const commercialLogic = ["Guest", "Service", "Experience", "Additional Revenue"];
+
+function OperatorValue() {
+  return (
+    <section className="bg-primary px-5 py-24 text-primary-foreground sm:px-8 md:py-32">
+      <div className="mx-auto grid w-full max-w-6xl gap-14 md:grid-cols-[1.2fr_1fr] md:items-center md:gap-20">
+        <Reveal>
+          <h2 className="text-4xl leading-[1.05] sm:text-5xl md:text-6xl">
+            One stay.
+            <br />
+            More experience.
+            <br />
+            More opportunity.
+          </h2>
+        </Reveal>
+        <Reveal delay={120}>
+          <ol className="space-y-0">
+            {commercialLogic.map((step, i) => (
+              <li key={step}>
+                <div
+                  className={cn(
+                    "border-b border-white/15 pb-3 text-lg sm:text-xl",
+                    i === commercialLogic.length - 1 && "border-b-0 text-2xl sm:text-3xl",
+                  )}
+                >
+                  {step}
+                </div>
+                {i < commercialLogic.length - 1 && (
+                  <div aria-hidden className="py-3 text-primary-foreground/40">
+                    ↓
+                  </div>
+                )}
+              </li>
+            ))}
+          </ol>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------------------- 6. Operations ----------------------------- */
+const capabilities = [
+  "QR",
+  "Guidebooks",
+  "Guest Forms",
+  "Requests",
+  "Reporting",
+  "Team Workflows",
+];
+
+function OperationsLayer() {
+  return (
+    <section className="px-5 py-20 sm:px-8 md:py-24">
+      <div className="mx-auto w-full max-w-6xl">
+        <Reveal>
+          <p className="max-w-2xl text-2xl leading-snug sm:text-3xl">
+            Behind the guest experience, StayWithVantage keeps the information connected.
+          </p>
+          <ul className="mt-10 flex flex-wrap gap-x-6 gap-y-3 border-t border-border pt-6 text-[0.625rem] uppercase tracking-[0.2em] text-muted-foreground">
+            {capabilities.map((c) => (
+              <li key={c}>{c}</li>
+            ))}
+          </ul>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------- 7. Scale ------------------------------- */
+function Scale() {
+  return (
+    <section className="relative overflow-hidden">
+      <img
+        src={portfolioImg}
+        alt="Premium apartment buildings and boutique property facades at golden hour"
+        loading="lazy"
+        width={1600}
+        height={912}
+        className="absolute inset-0 size-full object-cover"
+      />
+      <div className="absolute inset-0 bg-black/60" />
+      <div className="relative mx-auto w-full max-w-6xl px-5 py-24 sm:px-8 md:py-32">
+        <Reveal>
+          <h2 className="max-w-2xl text-4xl leading-[1.05] text-white sm:text-5xl md:text-6xl">
+            One property.
+            <br />
+            Then your portfolio.
+          </h2>
+          <p className="mt-7 max-w-xl text-white/80">
+            Build the guest experience once and create a more consistent operating layer as your
+            portfolio grows.
+          </p>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+/* -------------------------------- 8. CTA -------------------------------- */
 function PlatformCTA() {
   return (
-    <section className="relative overflow-hidden bg-ink px-5 py-24 text-white sm:px-8 md:py-32">
-      <img
-        src={teamImg}
-        alt="Property manager reviewing operations at a quiet desk"
-        loading="lazy"
-        width={1408}
-        height={1056}
-        className="absolute inset-0 size-full object-cover opacity-25"
-      />
-      <div className="relative mx-auto w-full max-w-6xl">
+    <section className="bg-sand px-5 py-24 sm:px-8 md:py-28">
+      <div className="mx-auto w-full max-w-6xl">
         <Reveal>
-          <h2 className="max-w-2xl text-3xl uppercase leading-[1.1] text-white sm:text-5xl">
-            Imagine running your property like this every day.
+          <h2 className="max-w-3xl text-3xl leading-[1.08] sm:text-5xl">
+            What could your property
+            <br />
+            make from the guest journey?
           </h2>
-          <p className="mt-6 max-w-xl text-white/70">
-            Tell us about your property. We'll show you where StayWithVantage can make the operation
-            easier.
-          </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center rounded-full bg-white px-7 py-3.5 text-xs uppercase tracking-[0.16em] text-primary transition-colors duration-300 hover:bg-white/90"
+              className="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-[0.6875rem] uppercase tracking-[0.18em] text-primary-foreground transition-colors duration-300 hover:bg-ink"
             >
-              Let's talk about your property
+              Talk to us
             </Link>
             <a
               href={whatsappHref}
               target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/50 px-7 py-3.5 text-xs uppercase tracking-[0.16em] text-white transition-colors duration-300 hover:bg-white hover:text-primary"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-primary/30 px-7 py-3.5 text-[0.6875rem] uppercase tracking-[0.18em] text-primary transition-colors duration-300 hover:border-primary hover:bg-primary hover:text-primary-foreground"
             >
-              <MessageCircle className="size-4" />
+              <MessageCircle aria-hidden className="size-4" />
               Chat on WhatsApp
             </a>
           </div>
@@ -608,16 +458,17 @@ function PlatformCTA() {
   );
 }
 
+/* ------------------------------- exported ------------------------------- */
 export function PlatformStory() {
   return (
     <>
-      <Opening />
-      <LittleThings />
-      <OperatingLayer />
-      <WhyItMatters />
+      <PlatformHero />
+      <Proposition />
+      <ValueAreas />
+      <GuestServices />
+      <OperatorValue />
+      <OperationsLayer />
       <Scale />
-      <PoweredBy />
-      <LayerRelationship />
       <PlatformCTA />
     </>
   );
