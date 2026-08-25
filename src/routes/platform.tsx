@@ -7,7 +7,7 @@ import svcTransfer from "@/assets/svc-transfer.jpg";
 import svcGrocery from "@/assets/svc-grocery.jpg";
 import svcTraining from "@/assets/svc-training.jpg";
 import svcRoom from "@/assets/svc-room.jpg";
-import svcExperiences from "@/assets/svc-experiences.jpg";
+import svcLaundry from "@/assets/svc-laundry.jpg";
 import svcChef from "@/assets/svc-chef.jpg";
 
 const title = "StayWithVantage Platform — Guest Experience Layer for Properties";
@@ -32,7 +32,7 @@ const examples = [
   { label: "Personal training", image: svcTraining },
   { label: "Private Chef", image: svcChef },
   { label: "Room services", image: svcRoom },
-  { label: "Experiences", image: svcExperiences },
+  { label: "Laundry", image: svcLaundry },
 
 ];
 

@@ -10,7 +10,7 @@ const opportunities = [
   "Grocery",
   "Personal Trainer",
   "Private Chef",
-  "Experiences",
+  "Laundry",
   "Guest Services",
 ];
 
