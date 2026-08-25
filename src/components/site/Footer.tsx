@@ -1,5 +1,5 @@
 import { Instagram } from "lucide-react";
-import { scrollToId } from "@/lib/scroll";
+import { Link } from "@tanstack/react-router";
 import { contact, navLinks } from "@/content/site";
 
 export function Footer() {
@@ -23,16 +23,11 @@ export function Footer() {
           </a>
         </div>
 
-        <nav className="flex flex-col items-start gap-3">
+        <nav aria-label="Footer" className="flex flex-col items-start gap-3">
           {navLinks.map((link) => (
-            <button
-              key={link.id}
-              type="button"
-              onClick={() => scrollToId(link.id)}
-              className="text-sm transition-colors hover:text-white"
-            >
+            <Link key={link.to} to={link.to} className="text-sm transition-colors hover:text-white">
               {link.label}
-            </button>
+            </Link>
           ))}
         </nav>
 
