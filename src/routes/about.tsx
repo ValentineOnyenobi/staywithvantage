@@ -1,13 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Audiences } from "@/components/site/Sections";
-import { LinkButton } from "@/components/site/ui";
-import { whatsappHref } from "@/content/site";
 import heroSuite from "@/assets/hero-suite.jpg";
 import statement from "@/assets/statement.jpg";
 import housekeepingTeam from "@/assets/housekeeping-team.jpg";
 import pfTeaserGuest from "@/assets/pf-teaser-guest.jpg";
 import svcChef from "@/assets/svc-chef.jpg";
-import ctaProperty from "@/assets/cta-property.jpg";
 
 const title = "About StayWithVantage — A better stay starts behind the scenes";
 const description =
