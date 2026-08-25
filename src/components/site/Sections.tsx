@@ -225,14 +225,16 @@ export function PropertyCareSummary() {
 /* ------------------------ 8. Statement / About ------------------------- */
 export function Statement() {
   return (
-    <Section id="about">
+    <Section id="about" className="pt-32 sm:pt-40">
       <div className="grid gap-12 md:grid-cols-2 md:items-center md:gap-16">
         <div>
-          <h2 className="text-3xl leading-tight sm:text-5xl">
+          <h1 className="text-3xl leading-tight sm:text-5xl">
             You run the property.
+
             <br />
             We make it easier.
-          </h2>
+          </h1>
+
           <p className="mt-6 max-w-md text-muted-foreground">
             Keep your people. Keep your management. Keep your business. We provide the services and
             systems that support your operation.
@@ -332,9 +334,10 @@ export function FinalCTA() {
           Ready to make it easier?
         </h2>
         <div className="mt-9 flex justify-center">
-          <ScrollButton to="enquiry" className="bg-white text-primary hover:bg-white/90">
+          <LinkButton to="/contact" className="bg-white text-primary hover:bg-white/90">
             Get Started
-          </ScrollButton>
+          </LinkButton>
+
         </div>
       </div>
     </section>

@@ -20,7 +20,7 @@ export const Route = createFileRoute("/about")({
 function AboutPage() {
   return (
     <>
-      <Statement heading />
+      <Statement />
       <Trust />
       <Audiences />
     </>
