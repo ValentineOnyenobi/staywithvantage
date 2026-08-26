@@ -3,7 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { navLinks } from "@/content/site";
-import logoAsset from "@/assets/sv-logo.png.asset.json";
+import logoUrl from "@/assets/sv-logo.png";
 
 export function Nav() {
   const [open, setOpen] = useState(false);
@@ -31,16 +31,16 @@ export function Nav() {
         <Link to="/" onClick={close} aria-label="StayWithVantage — home" className="min-w-0">
           <span
             className={cn(
-              "inline-flex items-center justify-center rounded-full bg-white p-1.5 shadow-sm transition-shadow sm:p-2",
+              "inline-flex items-center justify-center rounded-xl bg-white px-2 py-1.5 shadow-sm transition-shadow sm:px-2.5 sm:py-2",
               scrolled || open ? "ring-1 ring-border" : "ring-1 ring-white/40",
             )}
           >
             <img
-              src={logoAsset.url}
+              src={logoUrl}
               alt="StayWithVantage"
-              width={64}
-              height={64}
-              className="size-9 object-contain sm:size-11"
+              width={1024}
+              height={784}
+              className="h-9 w-auto object-contain sm:h-11"
             />
           </span>
         </Link>
@@ -99,7 +99,10 @@ export function Nav() {
       </div>
 
       {open && (
-        <nav aria-label="Mobile" className="border-t border-border bg-background px-5 pb-8 pt-4 lg:hidden">
+        <nav
+          aria-label="Mobile"
+          className="border-t border-border bg-background px-5 pb-8 pt-4 lg:hidden"
+        >
           {navLinks.map((link) => (
             <Link
               key={link.to}

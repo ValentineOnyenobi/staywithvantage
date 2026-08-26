@@ -1,7 +1,7 @@
 import { Instagram } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { contact, footerSecondaryLinks, navLinks } from "@/content/site";
-import logoAsset from "@/assets/sv-logo.png.asset.json";
+import logoUrl from "@/assets/sv-logo.png";
 
 export function Footer() {
   return (
@@ -10,11 +10,11 @@ export function Footer() {
         <div className="flex flex-col items-start">
           <span className="inline-flex items-center justify-center rounded-xl bg-white p-2.5 ring-1 ring-white/15">
             <img
-              src={logoAsset.url}
+              src={logoUrl}
               alt="StayWithVantage"
-              width={96}
-              height={96}
-              className="size-12 object-contain"
+              width={1024}
+              height={784}
+              className="h-14 w-auto object-contain"
             />
           </span>
           <p className="mt-3 text-sm leading-relaxed text-white/75">
