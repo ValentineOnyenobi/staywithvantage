@@ -1,48 +1,48 @@
-# StayWithVantage Web Platform
+# StayWithVantage — Web Platform
 
-The web platform for **StayWithVantage**, a hospitality brand focused on premium serviced stays and guest experiences.
+A responsive web platform developed for StayWithVantage, a property-services business combining property operations with digital guest-experience and reporting capabilities.
 
-The project brings together the brand's digital presence, property discovery and guest-facing information in a responsive web experience.
+## Project Overview
 
-## Purpose
+I designed and developed the website to communicate the StayWithVantage proposition and its two connected service areas:
 
-The platform is designed to provide a clear digital journey from discovering a property through to obtaining information about stays and connecting with the hospitality operation.
+- **Elite Handlers** — housekeeping, linen & bedsheets management, and industrial cleaning.
+- **StayWithVantage Platform** — digital guest requests, digital guidebooks, and maintenance and housekeeping reporting.
 
-## Key Areas
+The wider concept brings these capabilities together through **Elite Property Care**, supporting property owners and operators without replacing their existing management, pricing or teams.
 
-- Hospitality brand presentation
-- Property discovery
-- Responsive web experience
-- Guest-facing information
-- Direct enquiry and communication pathways
-- Multi-property architecture
-- Digital guest experience
+## What I Worked On
+
+- Website architecture and structure
+- User experience and responsive design
+- Service and proposition presentation
+- Information architecture
+- Frontend implementation
+- Component-based development
+- Responsive layouts
+- Brand and digital experience
+- Iterative product development
 
 ## Technology
 
-Built using modern web technologies with a focus on:
-
-- Responsive design
-- Component-based development
-- Modern frontend development
-- Performance and usability
-- Scalable website architecture
+**React · TypeScript · Vite · Tailwind CSS · shadcn/ui**
 
 ## Project Context
 
-StayWithVantage is part of a broader hospitality operating model being developed around premium serviced accommodation and guest experience.
+This project is part of my broader founder and consulting work, where I combine business understanding with technology, operations and execution to develop practical solutions.
 
-The repository contains implementation work for the web platform. Certain business logic, operational processes and proprietary information are intentionally not disclosed publicly.
+## Live Website
 
-## Website
-
-**StayWithVantage:**  
 https://staywithvantage.com/
 
 ## Developer
 
-**Valentine Onyenobi**  
+**Valentine Onyenobi**
+
 Business & Data Analyst | Founder & Consultant
 
-Professional portfolio:  
+Professional Portfolio:  
 https://valentineonyenobi.github.io/
+
+LinkedIn:  
+https://www.linkedin.com/in/valentineonyenobi/
