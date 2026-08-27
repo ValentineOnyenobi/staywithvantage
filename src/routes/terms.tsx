@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Eyebrow, Section } from "@/components/site/ui";
 import { contact } from "@/content/site";
 
-const title = "Terms of Service — StayWithVantage";
+const title = "Terms of Service - StayWithVantage";
 const description =
   "The terms that govern use of the StayWithVantage website, Elite Handlers property services and the StayWithVantage Platform.";
 

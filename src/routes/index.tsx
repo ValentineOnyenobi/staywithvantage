@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { FinalCTA, Hero, WhatWeDo } from "@/components/site/Sections";
 import { HowItWorks } from "@/components/site/HowItWorksFlow";
 
-const title = "StayWithVantage — Make your property easier to run";
+const title = "StayWithVantage - Make your property easier to run";
 const description =
   "In-house housekeeping, linen and industrial cleaning by Elite Handlers, plus guest experience, QR guidebooks and reporting from the StayWithVantage Platform.";
 

@@ -15,7 +15,7 @@ import svcOther from "@/assets/svc-other.jpg";
 import flowCapture from "@/assets/flow-02-capture.jpg";
 import flowVisibility from "@/assets/flow-05-visibility.jpg";
 
-const title = "Elite Package — Elite Property Care by StayWithVantage";
+const title = "Elite Package - Elite Property Care by StayWithVantage";
 const description =
   "Elite Property Care brings property care, guest experience, connected systems and day-to-day operational support together — Elite Handlers on the ground, StayWithVantage around the stay.";
 const url = "https://staywithvantage.lovable.app/elite-package";

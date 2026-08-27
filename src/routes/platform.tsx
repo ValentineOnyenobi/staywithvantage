@@ -10,7 +10,7 @@ import svcRoom from "@/assets/svc-room.jpg";
 import svcLaundry from "@/assets/svc-laundry.jpg";
 import svcChef from "@/assets/svc-chef.jpg";
 
-const title = "StayWithVantage Platform — Guest Experience Layer for Properties";
+const title = "StayWithVantage Platform - Guest Experience Layer for Properties";
 const description =
   "StayWithVantage is a hospitality optimisation and guest-experience layer: properties present useful services, information and experiences through the stay.";
 

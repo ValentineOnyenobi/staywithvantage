@@ -4,7 +4,7 @@ import { HandlersDetail } from "@/components/site/Sections";
 import { PlatformTeaser } from "@/components/site/PlatformTeaser";
 import { ElitePackageTeaser } from "@/components/site/ElitePackageTeaser";
 
-const title = "Services — Elite Handlers & StayWithVantage Platform";
+const title = "Services - Elite Handlers & StayWithVantage Platform";
 const description =
   "One company, two in-house service lines: Elite Handlers for housekeeping, linen and industrial cleaning, and the StayWithVantage Platform for guest experience and reporting.";
 
