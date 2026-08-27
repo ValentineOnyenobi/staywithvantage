@@ -1,4 +1,4 @@
-# StayWithVantage — Web Platform
+# StayWithVantage - Web Platform
 
 A responsive web platform developed for StayWithVantage, a property-services business combining property operations with digital guest-experience and reporting capabilities.
 
@@ -6,8 +6,8 @@ A responsive web platform developed for StayWithVantage, a property-services bus
 
 I designed and developed the website to communicate the StayWithVantage proposition and its two connected service areas:
 
-- **Elite Handlers** — housekeeping, linen & bedsheets management, and industrial cleaning.
-- **StayWithVantage Platform** — digital guest requests, digital guidebooks, and maintenance and housekeeping reporting.
+- **Elite Handlers** - housekeeping, linen & bedsheets management, and industrial cleaning.
+- **StayWithVantage Platform** - digital guest requests, digital guidebooks, and maintenance and housekeeping reporting.
 
 The wider concept brings these capabilities together through **Elite Property Care**, supporting property owners and operators without replacing their existing management, pricing or teams.
 
