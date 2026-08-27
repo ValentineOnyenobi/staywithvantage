@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Eyebrow, Section } from "@/components/site/ui";
 import { contact } from "@/content/site";
 
-const title = "Privacy Policy — StayWithVantage";
+const title = "Privacy Policy - StayWithVantage";
 const description =
   "How StayWithVantage collects, uses and protects information from property operators, their teams and their guests.";
 

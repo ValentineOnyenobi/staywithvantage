@@ -6,7 +6,7 @@ import housekeepingTeam from "@/assets/housekeeping-team.jpg";
 import pfTeaserGuest from "@/assets/pf-teaser-guest.jpg";
 import svcChef from "@/assets/svc-chef.jpg";
 
-const title = "About StayWithVantage — A better stay starts behind the scenes";
+const title = "About StayWithVantage - A better stay starts behind the scenes";
 const description =
   "StayWithVantage helps property operators create better stays, make more from each guest and run their properties with greater ease.";
 

@@ -4,7 +4,7 @@ import { contact, whatsappHref } from "@/content/site";
 import { Eyebrow, Section } from "@/components/site/ui";
 import { HubSpotForm } from "@/components/site/HubSpotForm";
 
-const title = "Contact StayWithVantage — Let's make it easier";
+const title = "Contact StayWithVantage - Let's make it easier";
 const description =
   "Talk to StayWithVantage about property care, guest experience and operational systems. WhatsApp is the fastest route, or send us an enquiry.";
 

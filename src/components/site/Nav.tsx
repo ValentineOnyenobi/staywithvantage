@@ -3,7 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { navLinks } from "@/content/site";
-import logoAsset from "@/assets/sv-logo.png.asset.json";
+import logoUrl from "@/assets/sv-logo.png";
 
 export function Nav() {
   const [open, setOpen] = useState(false);
@@ -36,7 +36,7 @@ export function Nav() {
             )}
           >
             <img
-              src={logoAsset.url}
+              src={logoUrl}
               alt="StayWithVantage"
               width={64}
               height={64}

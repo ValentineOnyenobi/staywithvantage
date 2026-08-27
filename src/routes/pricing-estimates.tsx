@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Eyebrow, LinkButton, Section } from "@/components/site/ui";
 import { Estimator } from "@/components/site/Estimator";
 
-const title = "Pricing Estimates — Elite Handlers Monthly Subscription";
+const title = "Pricing Estimates - Elite Handlers Monthly Subscription";
 const description =
   "Estimate your Elite Handlers monthly subscription: housekeeping frequency, optional linen management and combined property care — indicative pricing before a property assessment.";
 
