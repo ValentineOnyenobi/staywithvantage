@@ -137,6 +137,7 @@ const sections: Section[] = [
       "Withdrawal of consent where consent is the lawful basis",
       "Other applicable data-protection rights",
     ],
+    contactBlock: [{ label: "Requests", value: "Privacy@staywithvantage.com" }],
   },
   {
     heading: "10. Marketing",
