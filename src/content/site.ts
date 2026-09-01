@@ -36,7 +36,7 @@ export const images = {
 export const contact = {
   email: "hello@staywithvantage.com",
   phone: "+234 803 175 5479",
-  instagram: "https://instagram.com/staywithvantage",
+  instagram: "https://www.instagram.com/elitehandlers?igsi=ZmN4dmk5NTg5bjQ0",
 };
 
 export const whatsappHref = "https://wa.me/message/JXSLW6LDB6WIJ1";
