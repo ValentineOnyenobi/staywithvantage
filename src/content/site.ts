@@ -38,7 +38,7 @@ export const contact = {
   whatsappNumber: "10000000000",
   whatsappMessage: "Hi StayWithVantage, I'd like to know more about your services.",
   email: "hello@staywithvantage.com",
-  phone: "+234 814 325 9383",
+  phone: "+234 803 175 5479",
   instagram: "https://instagram.com/staywithvantage",
 };
 
