@@ -20,6 +20,7 @@ export const Route = createFileRoute("/terms")({
 
 type TermsSection = {
   heading: string;
+  notice?: { heading: string; text: string };
   paragraphs?: string[];
   bullets?: string[];
   groups?: { heading: string; subheading?: string; bullets?: string[]; paragraphs?: string[] }[];
@@ -51,7 +52,7 @@ const sections: TermsSection[] = [
   },
   {
     heading: "4. Linen Management & Identification",
-    groups: [{ heading: "Important - Linen Identification", paragraphs: ["Where we provide linen-management services, the client authorises us to apply a small, discreet identification mark, label, tag or other identification method to a limited and appropriate area of linen where reasonably necessary for:"] }],
+    notice: { heading: "Important - Linen Identification", text: "Where we provide linen-management services, the client authorises us to apply a small, discreet identification mark, label, tag or other identification method to a limited and appropriate area of linen where reasonably necessary for:" },
     bullets: ["Identification", "Sorting", "Grouping", "Inventory control", "Property allocation", "Preventing mix-ups", "Tracking linen through the laundering process", "Returning linen to the correct property"],
     paragraphs: ["The identification method will be designed to be as small and unobtrusive as reasonably practicable.", "Unless otherwise agreed, such identification does not affect the intended use of the linen. The client acknowledges that linen requiring professional laundering may be subject to normal washing, drying, ironing and handling processes and that ordinary wear, colour changes, fading, shrinkage, fabric weakening or deterioration may occur depending on the material, age, previous condition and manufacturer's instructions.", "We will not intentionally damage or materially alter linen."],
   },
@@ -116,6 +117,7 @@ function TermsPage() {
           <article key={s.heading} className="border-t border-border pt-6">
             <h2 className="text-xl">{s.heading}</h2>
             <div className="mt-3 space-y-3">
+              {s.notice && <div className="border-l-2 border-primary pl-4"><h3 className="text-sm font-medium uppercase text-foreground">{s.notice.heading}</h3><p className="mt-2 leading-relaxed text-muted-foreground">{s.notice.text}</p></div>}
               {s.paragraphs?.map((paragraph) => <p key={paragraph} className="leading-relaxed text-muted-foreground">{paragraph}</p>)}
               {s.bullets && <ul className="space-y-1.5 pl-5">{s.bullets.map((bullet) => <li key={bullet} className="list-disc leading-relaxed text-muted-foreground marker:text-muted-foreground">{bullet}</li>)}</ul>}
               {s.groups?.map((group) => (

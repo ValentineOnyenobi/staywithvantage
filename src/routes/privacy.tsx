@@ -23,6 +23,7 @@ type Section = {
   heading: string;
   paragraphs?: string[];
   bullets?: string[];
+  afterBullets?: string[];
   contactBlock?: { label: string; value: string }[];
 };
 
@@ -60,6 +61,7 @@ const sections: Section[] = [
       "Photographs or records relating to property condition where necessary for service delivery",
       "Website usage information, including technical information and cookies",
     ],
+    afterBullets: ["We only seek information reasonably necessary for the relevant purpose."],
   },
   {
     heading: "3. How We Use Information",
@@ -102,6 +104,9 @@ const sections: Section[] = [
       "Operational partners",
       "Cleaning, laundry or specialist service providers",
     ],
+    afterBullets: [
+      "We only share information where reasonably necessary for the relevant purpose or where required by law.",
+    ],
   },
   {
     heading: "6. Client and Property Data",
@@ -138,6 +143,7 @@ const sections: Section[] = [
       "Other applicable data-protection rights",
     ],
     contactBlock: [{ label: "Requests", value: "Privacy@staywithvantage.com" }],
+    afterBullets: ["We may need to verify your identity before responding."],
   },
   {
     heading: "10. Marketing",
@@ -180,6 +186,9 @@ const sections: Section[] = [
       "If you have concerns about how we handle your personal information, please contact us first at:",
     ],
     contactBlock: [{ label: "Email", value: "Privacy@staywithvantage.com" }],
+    afterBullets: [
+      "You may also have the right to complain to the relevant data-protection supervisory authority.",
+    ],
   },
 ];
 
@@ -215,6 +224,11 @@ function PrivacyPage() {
                   ))}
                 </ul>
               )}
+              {s.afterBullets?.map((p) => (
+                <p key={p} className="leading-relaxed text-muted-foreground">
+                  {p}
+                </p>
+              ))}
               {s.contactBlock && (
                 <dl className="mt-3 grid grid-cols-1 gap-x-8 gap-y-2 sm:grid-cols-[auto_1fr]">
                   {s.contactBlock.map((c) => (
