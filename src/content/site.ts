@@ -33,18 +33,13 @@ export const images = {
   housekeepingDetail,
 };
 
-// PLACEHOLDER — replace with the real WhatsApp business number (digits only).
 export const contact = {
-  whatsappNumber: "10000000000",
-  whatsappMessage: "Hi StayWithVantage, I'd like to know more about your services.",
   email: "hello@staywithvantage.com",
   phone: "+234 803 175 5479",
   instagram: "https://instagram.com/staywithvantage",
 };
 
-export const whatsappHref = `https://wa.me/${contact.whatsappNumber}?text=${encodeURIComponent(
-  contact.whatsappMessage,
-)}`;
+export const whatsappHref = "https://wa.me/message/JXSLW6LDB6WIJ1";
 
 export const navLinks = [
   { label: "Home", to: "/" },
